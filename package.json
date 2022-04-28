@@ -4,11 +4,13 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "preview": "nuxt preview"
+    "preview": "nuxt preview",
+    "deploy": "push-dir --dir=dist --branch=main --cleanup"
   },
   "devDependencies": {
     "bulma": "^0.9.3",
     "nuxt": "3.0.0-rc.1",
+    "push-dir": "^0.4.1",
     "sass": "^1.51.0",
     "sass-loader": "^10.2.1"
   }
