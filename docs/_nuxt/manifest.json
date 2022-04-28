@@ -1,0 +1,39 @@
+{
+  "node_modules/nuxt/dist/app/entry.mjs": {
+    "file": "entry-036999c9.mjs",
+    "src": "node_modules/nuxt/dist/app/entry.mjs",
+    "isEntry": true,
+    "dynamicImports": [
+      "pages/index.vue",
+      "pages/music_releases.vue",
+      "pages/research_projects.vue"
+    ],
+    "css": [
+      "entry.b01d34e6.css"
+    ]
+  },
+  "pages/index.vue": {
+    "file": "index-5271343c.mjs",
+    "src": "pages/index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "pages/music_releases.vue": {
+    "file": "music_releases-9532f124.mjs",
+    "src": "pages/music_releases.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "pages/research_projects.vue": {
+    "file": "research_projects-049e1783.mjs",
+    "src": "pages/research_projects.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  }
+}
