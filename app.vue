@@ -12,7 +12,7 @@ export default {
   <div>
     <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <a class="navbar-item" href="#">A. Finn Hackett<sub>(he/they)</sub>, MMath</a>
+        <a class="navbar-item" href="/">A. Finn Hackett<sub>(he/they)</sub>, MMath</a>
 
         <a role="button" @click="navbarExpanded = !navbarExpanded" :class="{ 'is-active': navbarExpanded }" class="navbar-burger" aria-label="menu" aria-expanded={{navbarExpanded}}>
           <span aria-hidden="true"></span>
