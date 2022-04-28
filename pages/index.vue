@@ -34,7 +34,7 @@
             </dl>
         </div>
     </div>
-    <div class="column is-hidden-touch is-two-fifths" style="background-image: url('assets/splash_img.png'); background-repeat: no-repeat; background-size: cover;">
+    <div class="column is-hidden-touch is-two-fifths" style="background-image: url('~/assets/splash_img.png'); background-repeat: no-repeat; background-size: cover;">
     </div>
 </div>
 </template>

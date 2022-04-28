@@ -7,7 +7,7 @@
     <div class="columns is-multiline is-centered is-variable is-8">
         <ResearchProject>
             <template #image>
-                <img src="assets/pgo-logo.jpg" alt="PGo logo" />
+                <img src="~/assets/pgo-logo.jpg" alt="PGo logo" />
             </template>
             <h3>
                 PGo (<a href="https://github.com/UBC-NSS/pgo">on Github</a>)
@@ -19,7 +19,7 @@
         </ResearchProject>
         <ResearchProject>
             <template #image>
-                <img src="assets/treegen_logo.png" alt="TreeGen logo" />
+                <img src="~/assets/treegen_logo.png" alt="TreeGen logo" />
             </template>
             <h3>TreeGen (<a href="http://hdl.handle.net/10012/16133">MMath Thesis</a>)</h3>
             <p>

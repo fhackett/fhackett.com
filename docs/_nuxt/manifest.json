@@ -1,6 +1,6 @@
 {
   "node_modules/nuxt/dist/app/entry.mjs": {
-    "file": "entry-207161f1.mjs",
+    "file": "entry-1624450c.mjs",
     "src": "node_modules/nuxt/dist/app/entry.mjs",
     "isEntry": true,
     "dynamicImports": [
@@ -10,10 +10,15 @@
     ],
     "css": [
       "entry.b01d34e6.css"
+    ],
+    "assets": [
+      "gfx_missing.b0ddd1f4.png",
+      "pgo-logo.4777b768.jpg",
+      "treegen_logo.c3cd5dc5.png"
     ]
   },
   "pages/index.vue": {
-    "file": "index-cd967b81.mjs",
+    "file": "index-0671fab0.mjs",
     "src": "pages/index.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -21,7 +26,7 @@
     ]
   },
   "pages/music_releases.vue": {
-    "file": "music_releases-8676dd35.mjs",
+    "file": "music_releases-95a94bf4.mjs",
     "src": "pages/music_releases.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -29,7 +34,7 @@
     ]
   },
   "pages/research_projects.vue": {
-    "file": "research_projects-5e9e87b0.mjs",
+    "file": "research_projects-76b01415.mjs",
     "src": "pages/research_projects.vue",
     "isDynamicEntry": true,
     "imports": [

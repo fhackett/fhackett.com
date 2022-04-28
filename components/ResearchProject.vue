@@ -4,7 +4,7 @@
             <div class="column is-one-third">
                 <figure class="image is-fullwidth">
                     <slot name="image">
-                        <img src="assets/gfx_missing.png" alt="missing logo" />
+                        <img src="~/assets/gfx_missing.png" alt="missing logo" />
                     </slot>
                 </figure>
             </div>
