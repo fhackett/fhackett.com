@@ -29,12 +29,12 @@
             <dl>
                 <dt>Email 📧</dt>
                 <dd><a href="mailto:fhackett@cs.ubc.ca">fhackett@cs.ubc.ca</a></dd>
-                <dt>Github <img class="icon is-small" src="assets/GitHub-Mark-32px.png" alt="Github icon" /></dt>
+                <dt>Github <img class="icon is-small" src="~/assets/GitHub-Mark-32px.png" alt="Github icon" /></dt>
                 <dd><a href="https://www.github.com/fhackett">https://www.github.com/fhackett</a></dd>
             </dl>
         </div>
     </div>
-    <div class="column is-hidden-touch is-two-fifths" style="background-image: url('~/assets/splash_img.png'); background-repeat: no-repeat; background-size: cover;">
+    <div class="column is-hidden-touch is-two-fifths main-bg-img">
     </div>
 </div>
 </template>

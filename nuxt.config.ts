@@ -4,6 +4,7 @@ import { defineNuxtConfig } from 'nuxt'
 export default defineNuxtConfig({
     css: [
         'bulma',
+        '~/assets/util.scss',
     ],
     target: 'static',
 })
