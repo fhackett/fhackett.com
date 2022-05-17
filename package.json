@@ -1,16 +1,19 @@
 {
   "private": true,
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "docs": "cp -r dist/* docs/"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
   "devDependencies": {
+    "@astrojs/solid-js": "^0.1.2",
     "bulma": "^0.9.3",
-    "nuxt": "3.0.0-rc.1",
     "sass": "^1.51.0",
-    "sass-loader": "^10.2.1"
+    "serialize-javascript": "^6.0.0",
+    "solid-js": "^1.4.1"
+  },
+  "dependencies": {
+    "astro": "^1.0.0-beta.27"
   }
 }

@@ -1,0 +1,22 @@
+---
+import 'bulma'
+import '../assets/util.scss'
+
+import {NavBar} from '../components/NavBar.jsx'
+---
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <NavBar client:load />
+
+        <slot />
+
+        <footer class="footer">
+        <div class="content has-text-centered">
+            © {new Date().getFullYear()} A. Finn Hackett
+        </div>
+        </footer>
+    </body>
+</html>

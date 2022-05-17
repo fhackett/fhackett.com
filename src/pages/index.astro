@@ -1,4 +1,9 @@
-<template>
+---
+import Page from '../layouts/Page.astro'
+
+import githubIcon from '../assets/GitHub-Mark-32px.png'
+---
+<Page>
 <div class="columns">
     <div class="column">
         <div class="content section">
@@ -29,7 +34,7 @@
             <dl>
                 <dt>Email 📧</dt>
                 <dd><a href="mailto:fhackett@cs.ubc.ca">fhackett@cs.ubc.ca</a></dd>
-                <dt>Github <img class="icon is-small" src="~/assets/GitHub-Mark-32px.png" alt="Github icon" /></dt>
+                <dt>Github <img class="icon is-small" src={githubIcon} alt="Github icon" /></dt>
                 <dd><a href="https://www.github.com/fhackett">https://www.github.com/fhackett</a></dd>
             </dl>
         </div>
@@ -37,4 +42,4 @@
     <div class="column is-hidden-touch is-two-fifths main-bg-img">
     </div>
 </div>
-</template>
+</Page>
