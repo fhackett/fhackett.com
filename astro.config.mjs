@@ -8,6 +8,4 @@ import mdx from "@astrojs/mdx";
 // https://astro.build/config
 export default defineConfig({
   integrations: [solid(), tailwind(), mdx()],
-  outDir: './docs',
-  site: 'https://fhackett.github.io'
 });
