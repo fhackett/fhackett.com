@@ -1,21 +1,23 @@
 ---
-import 'bulma'
-
 import {NavBar} from '../components/NavBar.jsx'
 ---
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!--<link rel="icon" type="image/svg+xml" href="/favicon.svg" />-->
+        <meta name="generator" content={Astro.generator} />
+        <!--<title>DistCompiler/PGo: {title}</title>-->
     </head>
-    <body>
+    <body class="bg-zinc-100">
         <NavBar client:load />
 
-        <slot />
+        <main class="bg-white">
+            <slot />
+        </main>
 
-        <footer class="footer">
-        <div class="content has-text-centered">
+        <footer class="text-center p-3">
             © {new Date().getFullYear()} A. Finn Hackett
-        </div>
         </footer>
     </body>
 </html>

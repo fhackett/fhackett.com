@@ -1,17 +1,18 @@
 ---
 import gfxMissing from '../assets/gfx_missing.png'
+
+const {img = gfxMissing, alt = "missing logo"} = Astro.props;
 ---
-<div class="column is-5" style="margin-bottom: 2rem;">
-    <div class="columns is-mobile box">
-        <div class="column is-one-third">
-            <figure class="image is-fullwidth">
-                <slot name="image">
-                    <img src={gfxMissing} alt="missing logo" />
-                </slot>
-            </figure>
-        </div>
-        <div class="column is-two-thirds content">
-            <slot></slot>
+<div class="border border-zinc-600 rounded-lg p-3 shadow-lg bg-white">
+    <div class="prose prose-zinc mb-2">
+        <h2>
+            <slot name="title" />
+        </h2>
+    </div>
+    <div class="flex flex-row flex-wrap gap-3">
+        <img class="w-64" src={img} alt={alt} />
+        <div class="prose prose-zinc">
+            <slot name="desc" />
         </div>
     </div>
 </div>

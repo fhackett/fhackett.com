@@ -1,0 +1,46 @@
+---
+layout: ../layouts/Page.astro
+---
+import githubIcon from '../assets/GitHub-Mark-32px.png'
+import bgImage from '../assets/splash_img.png'
+
+<div class="md:grid md:grid-cols-[.7fr_.3fr]">
+<div class="p-4 prose prose-zinc container max-w-none prose-headings:mb-3 prose-hr:my-4">
+    # Self-Introduction
+
+    I'm a PhD student at the University of British Columbia, and I'm interested in programming language design in an applied context.
+    I consider domain-specific problems from a linguistic viewpoint, and try to dealing with a given issue easier by helping people express themselves more effectively.
+
+    At the moment, I'm primarily working in the TLA+ ecosystem, where I am one of the main developers of the <a href="https://github.com/UBC-NSS/pgo">PGo project</a>.
+    The project's goal is to take a simplified, more pragmatic approach to verified distributed systems development by providing lighter-weight model checking-based verification alongside a simplified imperative-like modeling language and a flexible API for interoperation between verified and unverified code.
+
+    This site, like a CV but more colourful, combines information about my projects and other pursuits for those interested.
+    Check out the links at the top for more information.
+
+    <hr/>
+
+    ## Education
+
+    - PhD, University of British Columbia, 2020-current. Supervised by <a href="https://www.cs.ubc.ca/~bestchai/">Ivan Beschastnikh</a>.
+    - MMath, University of Waterloo, 2018-2020. Supervised by <a href="https://plg.uwaterloo.ca/~olhotak/">Ondřej Lhoták</a>.
+    - BSc w/Co-op, University of British Columbia, 2013-2018.
+
+    <hr/>
+
+    ## Contact
+
+    <div class="not-prose grid grid-cols-[3em_1em_minmax(0,1fr)] gap-2">
+        <div>Email</div>
+        <div>📧</div>
+        <div class="underline font-medium pl-3"><a href="mailto:fhackett@cs.ubc.ca">fhackett@cs.ubc.ca</a></div>
+
+        <div>Github</div>
+        <img class="inline h-4 w-4" src={githubIcon} alt="Github icon" />
+        <div class="underline font-medium pl-3"><a href="https://www.github.com/fhackett">https://www.github.com/fhackett</a></div>
+    </div>
+</div>
+
+<div class="hidden md:block bg-gradient-to-br from-white via-white to-zinc-400">
+    <img src={bgImage} class="w-full rounded-bl-[10rem]" />
+</div>
+</div>

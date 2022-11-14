@@ -2,41 +2,53 @@
 import Page from '../layouts/Page.astro'
 import ResearchProject from '../components/ResearchProject.astro'
 
+import backgroundImage from '../assets/fish bg 1.png'
+
 import pgoLogo from '../assets/pgo-logo.jpg'
 import treegenLogo from '../assets/treegen_logo.png'
 ---
 <Page>
-<div class="section">
-    <div class="content has-text-centered">
-        <h2>Research Projects</h2>
+    <div class="p-3 bg-cover" style={`background-image: url("${backgroundImage}");`}>
+        <div class="prose mx-auto text-center mb-4">
+            <h1>Research Projects</h1>
+        </div>
+
+        <div class="gap-4 flex flex-col items-center">
+            <ResearchProject img={pgoLogo} alt="PGo logo">
+                <Fragment slot="title">
+                    PGo (<a href="https://github.com/UBC-NSS/pgo">on Github</a>)
+                </Fragment>
+                <Fragment slot="desc">
+                    <p>
+                        A <em>distributed systems compiler</em>, aiming to provide compilation from abstract model-checkable specifications in PlusCal into Go code that can run on a real network.
+                        The project includes networking support libraries, and Modular Pluscal, a modular superset of PlusCal.
+                    </p>
+                </Fragment>
+            </ResearchProject>
+            <ResearchProject img={treegenLogo} alt="TreeGen logo">
+                <img slot="image" src={treegenLogo} alt="TreeGen logo" />
+                <Fragment slot="title">
+                    TreeGen (<a href="http://hdl.handle.net/10012/16133">MMath Thesis</a>)
+                </Fragment>
+                <Fragment slot="desc">
+                    <p>
+                        My MMath thesis work.
+                        Designed to make Interface Definition Language implementation easier, it's an impure functional language with fully out-of-order processing, making order-of-operations bugs, even involving pointers, impossible.
+                    </p>
+                </Fragment>
+            </ResearchProject>
+            <ResearchProject>
+                <Fragment slot="title">
+                    mel (<a href="https://doi.org/10.1145/3365438.3410964">MODELS 2020</a>)
+                </Fragment>
+                <Fragment slot="desc">
+                    <p>
+                        <em>mel</em> is a declarative, rule-based Model Extraction Language for extracting facts from XML-structured models of software.
+                        This is a collaboration with <a href="https://watform.uwaterloo.ca/">WatForm</a>, centered around Rob Hackman's thesis under <a href="https://cs.uwaterloo.ca/~jmatlee/">Jo Atlee</a>.
+                        I primarily contributed evaluation work, comparing <em>mel</em> with&nbsp;<a href="https://www.w3.org/TR/xquery/">XQuery</a>, an established web standard with related properties.
+                    </p>
+                </Fragment>
+            </ResearchProject>
+        </div>
     </div>
-</div>
-<div class="columns is-multiline is-centered is-variable is-8">
-    <ResearchProject>
-        <img slot="image" src={pgoLogo} alt="PGo logo" />
-        <h3>
-            PGo (<a href="https://github.com/UBC-NSS/pgo">on Github</a>)
-        </h3>
-        <p>
-            A <em>distributed systems compiler</em>, aiming to provide compilation from abstract model-checkable specifications in PlusCal into Go code that can run on a real network.
-            The project includes networking support libraries, and Modular Pluscal, a modular superset of PlusCal.
-        </p>
-    </ResearchProject>
-    <ResearchProject>
-        <img slot="image" src={treegenLogo} alt="TreeGen logo" />
-        <h3>TreeGen (<a href="http://hdl.handle.net/10012/16133">MMath Thesis</a>)</h3>
-        <p>
-            My MMath thesis work.
-            Designed to make Interface Definition Language implementation easier, it's an impure functional language with fully out-of-order processing, making order-of-operations bugs, even involving pointers, impossible.
-        </p>
-    </ResearchProject>
-    <ResearchProject>
-        <h3>mel (<a href="https://doi.org/10.1145/3365438.3410964">MODELS 2020</a>)</h3>
-        <p>
-            <em>mel</em> is a declarative, rule-based Model Extraction Language for extracting facts from XML-structured models of software.
-            This is a collaboration with <a href="https://watform.uwaterloo.ca/">WatForm</a>, centered around Rob Hackman's thesis under <a href="https://cs.uwaterloo.ca/~jmatlee/">Jo Atlee</a>.
-            I primarily contributed evaluation work, comparing <em>mel</em> with&nbsp;<a href="https://www.w3.org/TR/xquery/">XQuery</a>, an established web standard with related properties.
-        </p>
-    </ResearchProject>
-</div>
 </Page>
