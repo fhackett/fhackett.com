@@ -1,13 +1,14 @@
 ---
 import {NavBar} from '../components/NavBar.jsx'
+import favicon from '../assets/favicon.png'
 ---
 <html>
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <!--<link rel="icon" type="image/svg+xml" href="/favicon.svg" />-->
+        <link rel="icon" type="image/svg+xml" href={favicon} />
         <meta name="generator" content={Astro.generator} />
-        <!--<title>DistCompiler/PGo: {title}</title>-->
+        <title>A. Finn Hackett</title>
     </head>
     <body class="bg-zinc-100">
         <NavBar client:load />
