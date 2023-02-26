@@ -10,7 +10,7 @@ const {img = gfxMissing, alt = "missing logo"} = Astro.props;
         </h2>
     </div>
     <div class="flex flex-row flex-wrap gap-3">
-        <img class="w-64" src={img} alt={alt} />
+        <img class="w-64" draggable="false" src={img} alt={alt} />
         <div class="prose prose-zinc">
             <slot name="desc" />
         </div>
