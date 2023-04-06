@@ -1,7 +1,16 @@
 ---
 import {NavBar} from '../components/NavBar.jsx'
 import favicon from '../assets/favicon.png'
+import bangers from '../assets/Bangers-Regular.ttf'
 ---
+<style is:global define:vars={{bangers}}>
+    @font-face {
+        font-family: 'Bangers';
+        src: url(var(--banger));
+    }
+</style>
+
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8" />
