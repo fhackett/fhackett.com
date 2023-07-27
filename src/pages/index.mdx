@@ -5,8 +5,6 @@ import githubIcon from '../assets/GitHub-Mark-32px.png'
 import bgImage from '../assets/splash_img.png'
 import Publication from '../components/Publication.astro'
 
-import asplos23PDF from '../assets/asplosb23main-p12-p-e73de3693c-62943-final.pdf'
-
 <div class="md:grid md:grid-cols-[.7fr_.3fr]">
 <div class="p-4 prose prose-zinc container max-w-none prose-headings:mb-3 prose-hr:my-4">
     # Self-Introduction
@@ -85,6 +83,17 @@ import asplos23PDF from '../assets/asplosb23main-p12-p-e73de3693c-62943-final.pd
     ## Publications
 
     <Publication
+        title="Going Beyond an Incident Report with TLA+"
+        authors={[
+            ["Finn Hackett", "/"],
+            "Joshua Rowe",
+            ["Markus Alexander Kuppe", "https://lemmster.de/"]
+        ]}
+        doi="https://www.usenix.org/publications/loginonline/going-beyond-incident-report-tla"
+        pdf="/files/_login__Going_Beyond_an_Incident_Report_with_TLA_.pdf"
+        conference=":login;"
+    />
+    <Publication
         title="Compiling Distributed System Models with PGo"
         authors={[
             ["Finn Hackett", "/"],
@@ -93,7 +102,7 @@ import asplos23PDF from '../assets/asplosb23main-p12-p-e73de3693c-62943-final.pd
             ["Matthew Do", "https://minhdo.org/"],
             ["Ivan Beschastnikh","https://www.cs.ubc.ca/~bestchai/"]]}
         doi="https://doi.org/10.1145/3575693.3575695"
-        pdf={asplos23PDF}
+        pdf="/files/asplosb23main-p12-p-e73de3693c-62943-final.pdf"
         conference="ASPLOS'23"
         artifactAvailable={true}
         artifactFunctional={true}
@@ -108,6 +117,7 @@ import asplos23PDF from '../assets/asplosb23main-p12-p-e73de3693c-62943-final.pd
             ["Markus Alexander Kuppe", "https://lemmster.de/"]
         ]}
         doi="https://conf.researchr.org/details/icse-2023/icse-2023-SEIP/3/Understanding-Inconsistency-in-Azure-Cosmos-DB-with-TLA-"
+        pdf="/files/icse-seip-23-inconsistency.pdf"
         conference="ICSE'23-SEIP"
     />
     <Publication
