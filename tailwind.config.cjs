@@ -1,9 +1,10 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: ['./src/**/*.{astro,html,js,jsx,svelte,ts,tsx,vue,mdx}'],
-	theme: {
-		extend: {},
-	},
-	plugins: [
-		require('@tailwindcss/typography'),
-	],
-}
+  content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
+  theme: {
+    extend: {}
+  },
+  plugins: [
+    require('@tailwindcss/typography'),
+  ]
+};
