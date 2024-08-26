@@ -4,29 +4,33 @@ import * as venues from "../venues";
 
 import { JSX } from "solid-js";
 
+function fmtEnumeration(elems: JSX.Element[]): JSX.Element {
+  return (<ul>{elems.map((elem, idx) => {
+    let suffix =
+      idx === 0 && elems.length === 2 ? (
+        <>&nbsp;and&nbsp;</>
+      ) : idx === elems.length - 2 ? (
+        <>, and&nbsp;</>
+      ) : idx < elems.length - 1 ?  (
+        <>,&nbsp;</>
+      ) : (
+        <></>
+      );
+
+    return (
+      <li classList={{'inline-block': true}}>
+        {elem}
+        {suffix}
+      </li>
+    );
+  })}</ul>);
+}
+
 function fmtAuthors(authors: authors.Author[]) {
   if (authors) {
     return (
       <div class="pl-8 flex flex-row flex-wrap italic">
-        {authors.map((author, idx) => {
-          let prefix =
-            idx === 1 && authors.length === 2 ? (
-              <>&nbsp;and&nbsp;</>
-            ) : idx > 0 && idx === authors.length - 1 ? (
-              <>, and&nbsp;</>
-            ) : idx > 0 ? (
-              <>,&nbsp;</>
-            ) : (
-              <></>
-            );
-
-          return (
-            <>
-              {prefix}
-              {author.jsx()}
-            </>
-          );
-        })}
+        {fmtEnumeration(authors.map((author) => author.jsx()))}
       </div>
     );
   } else {
@@ -124,6 +128,18 @@ export default function Intro() {
         <hr />
 
         <h2>Talks</h2>
+
+        <div classList={{'not-prose': true, 'pb-2': true}}>
+          [Invited] <span classList={{'font-bold': true}}>Compiling Distributed System Models with PGo, and Beyond</span>
+          <div classList={{'pl-8': true, 'flex': true, 'flex-row': true, 'flex-wrap': true}}>
+            {fmtEnumeration([
+              // <>@Oxford University</>,
+              <>August'24 @<a href="https://www.imperial.ac.uk/computing" classList={util.hrefStyle}>Imperial College London</a> (hosted by&nbsp;<a href="https://marioskogias.github.io/" classList={util.hrefStyle}>Marios Kogias</a>)</>,
+              <>July'24 @<a href="https://www.cst.cam.ac.uk/research/themes/systems-and-networking" classList={util.hrefStyle}>Cambridge University</a> (hosted by&nbsp;<a href="https://heidihoward.github.io/" classList={util.hrefStyle}>Heidi Howard</a>, <a href="https://ryan.freumh.org/about.html" classList={util.hrefStyle}>Ryan Gibb</a>)</>,
+              <>January'24 @<a href="https://www.microsoft.com/en-us/research/group/azure-security-privacy/" classList={util.hrefStyle}>Microsoft Research Cambridge</a> (hosted by&nbsp;<a href="https://www.microsoft.com/en-us/research/people/mattpark/" classList={util.hrefStyle}>Matthew Parkinson</a>)</>,
+            ])}
+          </div>
+        </div>
 
         {(() => {
           interface Talk {
