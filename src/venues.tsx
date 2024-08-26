@@ -27,7 +27,7 @@ export class Venue extends util.WithPropsOf<VenueProps> {
   jsx() {
     return (
       <a href={this.href} classList={util.hrefStyle}>
-        [{this.name}]
+        [{this.name}{this.year? `'${this.year}` : ''}]
       </a>
     );
   }
