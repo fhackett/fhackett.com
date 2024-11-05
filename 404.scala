@@ -19,6 +19,6 @@ object `404` extends Target:
           "[Not Found]"
         ),
         p(
-          "I'm not sure how you got here...",
+          "I'm not sure how you got here..."
         )
       )

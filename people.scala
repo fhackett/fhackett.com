@@ -14,18 +14,18 @@ object people:
         case Some(href) =>
           a(
             *.href := href,
-            name,
+            name
           )
 
   def authorList(list: List[Person]): Modifier =
     list match
-      case Nil => ""
+      case Nil          => ""
       case List(single) => single.link
       case List(fst, snd) =>
         modifier(
           fst.link,
           " and ",
-          snd.link,
+          snd.link
         )
       case list =>
         // size >= 3
@@ -35,10 +35,10 @@ object people:
             .map: person =>
               modifier(
                 ", ",
-                person.link,
+                person.link
               ),
           ", and ",
-          list.last.link,
+          list.last.link
         )
 
   object bestchai extends Person:

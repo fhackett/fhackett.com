@@ -18,7 +18,7 @@ def build(): Unit =
     index,
     music_releases,
     research_projects,
-    `404`,
+    `404`
   )
 
   val publicFiles =
@@ -49,12 +49,19 @@ def build(): Unit =
   publicFiles.foreach: file =>
     val shouldTouch =
       !os.exists(dirs.prebuild / file)
-      || (os.stat(dirs.public / file).mtime.compareTo(os.stat(dirs.prebuild / file).mtime) > 0)
+        || (os
+          .stat(dirs.public / file)
+          .mtime
+          .compareTo(os.stat(dirs.prebuild / file).mtime) > 0)
 
     if shouldTouch
     then
       println(s"updating ${dirs.prebuild / file}")
-      os.copy.over(from = dirs.public / file, to = dirs.prebuild / file, createFolders = true)
+      os.copy.over(
+        from = dirs.public / file,
+        to = dirs.prebuild / file,
+        createFolders = true
+      )
 
   os.proc("bun", "install").call(cwd = dirs.prebuild)
 
@@ -70,13 +77,17 @@ def dev(): Unit =
   build()
   waitingMsg()
 
-  Using.resource(os.watch.watch(Seq(dirs.public), changes =>
-    println(s"saw changes:")
-    changes.foreach: path =>
-      println(s"  $path")
-    println("rebuilding...")
-    build()
-    waitingMsg()
-  )): _ =>
+  Using.resource(
+    os.watch.watch(
+      Seq(dirs.public),
+      changes =>
+        println(s"saw changes:")
+        changes.foreach: path =>
+          println(s"  $path")
+        println("rebuilding...")
+        build()
+        waitingMsg()
+    )
+  ): _ =>
     // have a seat and let the other threads work
     Thread.currentThread().join()
