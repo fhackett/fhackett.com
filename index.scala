@@ -12,20 +12,19 @@ object index extends Target:
     div(
       *.cls := "bg-white",
       *.cls := "hidden",
-      *.cls := "md:block",
-      *.cls := "float-right",
+      *.cls := "lg:block",
       *.cls := "border-1",
       *.cls := "border-solid",
       *.cls := "ml-3",
       *.cls := "mb-3",
       *.cls := "mt-3",
-      *.cls := "w-1/4",
+      *.cls := "justify-self-end",
+      *.cls := "max-w-350px",
       *.cls := "h-min",
-      *.cls := "max-w-300px",
       img(
         *.src := src,
-        *.cls := "object-contain",
-        *.cls := "max-w-300px",
+        *.cls := "object-scale-down",
+        *.cls := "w-full",
       ),
       div(
         *.cls := "text-center",
@@ -45,133 +44,166 @@ object index extends Target:
         tags2.section(
           *.cls := "pt-4",
           *.cls := "border-x-0",
-          placeImg("/gfx/martin-1.png"),
-          h2("Self-Introduction 📖"),
-          // TODO: add internships
-          frag"""
-            I'm a PhD student in the ${a(
-              *.href := "https://systopia.cs.ubc.ca/",
-              "Systopia",
-            )} and ${a(
-              *.href := "https://spl.cs.ubc.ca/index.html",
-              "Software Practices",
-            )} labs at the University of British Columbia.
-            My interests relate to programming language design in an applied context, with an ongoing focus on formal modeling languages.
-            I want full-stack verified software development, from modeling the target system to dealing with performance engineering practicalities and mainenance, to be a realistic option for developers.
-            That switch, between modeling concerns and implementation issues, is a particular point of friction that I'm working to alleviate.
-
-            My work so far has been as a developer of the ${a(
-              *.href := "https://github.com/DistCompiler/pgo",
-              "PGo project",
-            )}, a compiler for verified distributed system models.
-            I am also working on a follow-up project, ${a(
-              *.href := "https://github.com/DistCompiler/dcal",
-              "DCal",
-            )} (note: very much pre-alpha), which introduces guided term rewriting into distributed system model compilation.
-            The goal is to allow a developer to explain mismatches between their model and intended working system, such that the compiler can reliably generate that intended system.
-            
-            You might also be interested in my work on the interface-level ${a(
-              *.href := "https://github.com/tlaplus/azure-cosmos-tla/tree/master/simple-model",
-              "modeling of Azure Cosmos DB in TLA+",
-            )}.
-
-            Regardless of how up to date the above ideas are, this website is a catalog of things I've built or thought about.
-            This includes my research projects, talks (including video links when possible), peer-reviewed publications, and over 10 years' worth of electronic music production.
-
-            If you're an undergraduate student reading this who wants to get involved in research, feel free to get in touch.
-            We could work out some sort of collaboration, or, failing that, I could at least point you toward someone whose work might be a better fit for your interests.
-
-            Also, check out Martin Hackett, whose paintings I used as part of this website's design.
-          """,
-        ),
-        // ---
-        tags2.section(
-          *.cls := "pt-4",
-          *.cls := "border-x-0",
+          // single col version
           *.cls := "divide-y",
           *.cls := "divide-gray",
           *.cls := "divide-solid",
-          *.cls := "md:divide-y-none",
-          *.cls := "md:grid",
-          *.cls := "md:grid-cols-[repeat(1,1fr)repeat(1,2fr)]",
-          *.cls := "md:gap-2",
+          // 2 col version
+          *.cls := "lg:divide-y-0",
+          *.cls := "lg:grid",
+          *.cls := "lg:grid-cols-[repeat(1,auto)min-content]",
           tags2.section(
+            *.cls := "lg:pr-2",
+            *.cls := "lg:border-r-2",
+            *.cls := "lg:border-r-gray",
+            *.cls := "lg:border-r-double",
+            h2("Self-Introduction 📖"),
+            // TODO: add internships
+            frag"""
+              I'm a PhD student in the ${a(
+                *.href := "https://systopia.cs.ubc.ca/",
+                "Systopia",
+              )} and ${a(
+                *.href := "https://spl.cs.ubc.ca/index.html",
+                "Software Practices",
+              )} labs at the University of British Columbia.
+              My interests relate to programming language design in an applied context, with an ongoing focus on formal modeling languages.
+              I want full-stack verified software development, from modeling the target system to dealing with performance engineering practicalities and mainenance, to be a realistic option for developers.
+              That switch, between modeling concerns and implementation issues, is a particular point of friction that I'm working to alleviate.
+
+              My work so far has been as a developer of the ${a(
+                *.href := "https://github.com/DistCompiler/pgo",
+                "PGo project",
+              )}, a compiler for verified distributed system models.
+              I am also working on a follow-up project, ${a(
+                *.href := "https://github.com/DistCompiler/dcal",
+                "DCal",
+              )} (note: very much pre-alpha), which introduces guided term rewriting into distributed system model compilation.
+              The goal is to allow a developer to explain mismatches between their model and intended working system, such that the compiler can reliably generate that intended system.
+              
+              You might also be interested in my work on the interface-level ${a(
+                *.href := "https://github.com/tlaplus/azure-cosmos-tla/tree/master/simple-model",
+                "modeling of Azure Cosmos DB in TLA+",
+              )}.
+
+              Regardless of how up to date the above ideas are, this website is a catalog of things I've built or thought about.
+              This includes my research projects, talks (including video links when possible), peer-reviewed publications, and over 10 years' worth of electronic music production.
+
+              If you're an undergraduate student reading this who wants to get involved in research, feel free to get in touch.
+              We could work out some sort of collaboration, or, failing that, I could at least point you toward someone whose work might be a better fit for your interests.
+
+              Also, check out Martin Hackett, whose paintings I used as part of this website's design.
+            """,
+          ),
+          div(
+            *.cls := "divide-y",
+            *.cls := "divide-gray",
+            *.cls := "divide-solid",
             *.cls := "border-x-0",
-            h2("Contact 📡"),
-            div(
-              *.cls := "inline-grid",
-              *.cls := "grid-cols-[repeat(3,min-content)auto]",
-              *.cls := "gap-3",
-              *.cls := "mb-4",
-              // row 1
-              span("E-Mail"),
-              span("📧", *.cls := "mx-auto"),
-              span("≝"),
-              tags.a(
-                *.cls := "underline",
-                *.cls := "hover:no-underline",
-                *.cls := "color-black",
-                *.href := "mailto:fhackett@cs.ubc.ca",
-                span("fhackett@cs.ubc.ca")
+            tags2.section(
+              *.cls := "pt-4",
+              *.cls := "lg:pt-0",
+              *.cls := "lg:pl-2",
+              *.cls := "border-x-0",
+              h2("Contact 📡"),
+              div(
+                *.cls := "inline-grid",
+                *.cls := "grid-cols-[repeat(3,min-content)auto]",
+                *.cls := "gap-3",
+                *.cls := "mb-4",
+                // row 1
+                span("E-Mail"),
+                span("📧", *.cls := "mx-auto"),
+                span("≝"),
+                tags.a(
+                  *.cls := "underline",
+                  *.cls := "hover:no-underline",
+                  *.cls := "color-black",
+                  *.href := "mailto:fhackett@cs.ubc.ca",
+                  span("fhackett@cs.ubc.ca")
+                ),
+                // row 2
+                span("Github"),
+                img(*.src := "/icons/github-mark.svg", *.cls := "h-1em", *.cls := "mx-auto"),
+                span("≝"),
+                tags.a(
+                  *.cls := "underline",
+                  *.cls := "hover:no-underline",
+                  *.cls := "color-black",
+                  *.href := "https://www.github.com/fhackett",
+                  span("https://www.github.com/fhackett")
+                ),
               ),
-              // row 2
-              span("Github"),
-              img(*.src := "/icons/github-mark.svg", *.cls := "h-1em", *.cls := "mx-auto"),
-              span("≝"),
-              tags.a(
-                *.cls := "underline",
-                *.cls := "hover:no-underline",
-                *.cls := "color-black",
-                *.href := "https://www.github.com/fhackett",
-                span("https://www.github.com/fhackett")
+            ),
+            // ---
+            tags2.section(
+              *.cls := "pt-4",
+              *.cls := "lg:pl-2",
+              *.cls := "border-x-0",
+              h2("Education 🧑‍🎓"),
+              ul(
+                *.cls := "list-none",
+                *.cls := "m-0",
+                *.cls := "mb-4",
+                *.cls := "p-0",
+                *.cls := "inline-grid",
+                *.cls := "grid-cols-[repeat(1,min-content)auto]",
+                *.cls := "gap-3",
+                tags.span("🏫"),
+                li(
+                  "PhD, University of British Columbia, 2020-current. Supervised by ",
+                  people.bestchai.link,
+                  ".",
+                ),
+                tags.span("🎓"),
+                li(
+                  "MMath, University of Waterloo, 2018-2020. Supervised by ",
+                  people.olhotak.link,
+                  ".",
+                ),
+                tags.span("🎓"),
+                li("BSc w/Co-op, University of British Columbia, 2013-2018."),
               ),
             ),
           ),
-          // ---
-          tags2.section(
-            *.cls := "pt-4",
-            *.cls := "md:pt-0",
-            *.cls := "border-x-0",
-            h2("Education 🧑‍🎓"),
-            ul(
-              *.cls := "list-none",
-              *.cls := "m-0",
-              *.cls := "mb-4",
-              *.cls := "p-0",
-              *.cls := "inline-grid",
-              *.cls := "grid-cols-[repeat(1,min-content)auto]",
-              *.cls := "gap-3",
-              tags.span("🏫"),
-              li(
-                "PhD, University of British Columbia, 2020-current. Supervised by ",
-                people.bestchai.link,
-                ".",
-              ),
-              tags.span("🎓"),
-              li(
-                "MMath, University of Waterloo, 2018-2020. Supervised by ",
-                people.olhotak.link,
-                ".",
-              ),
-              tags.span("🎓"),
-              li("BSc w/Co-op, University of British Columbia, 2013-2018."),
-            ),
+        ),
+        // ---
+        // tags2.section(
+        //   *.cls := "pt-4",
+        //   *.cls := "border-x-0",
+        //   *.cls := "divide-y",
+        //   *.cls := "divide-gray",
+        //   *.cls := "divide-solid",
+        //   *.cls := "md:divide-y-none",
+        //   *.cls := "md:grid",
+        //   *.cls := "md:grid-cols-[repeat(1,1fr)repeat(1,2fr)]",
+        //   *.cls := "md:gap-2",
+        // ),
+        // ---
+        tags2.section(
+          *.cls := "pt-4",
+          *.cls := "border-x-0",
+          // lg image show
+          *.cls := "lg:grid",
+          *.cls := "lg:grid-cols-[repeat(1,3fr)1fr]",
+          div(
+            h2("Talks 🎙️"),
+            talks.map(_.render),
           ),
+          placeImg("/gfx/martin-1.png"),
         ),
         // ---
         tags2.section(
           *.cls := "pt-4",
           *.cls := "border-x-0",
+          // lg image show
+          *.cls := "lg:grid",
+          *.cls := "lg:grid-cols-[repeat(1,3fr)1fr]",
+          div(
+            h2("Publications 📜"),
+            publications.map(_.render),
+          ),
           placeImg("/gfx/martin-2.png"),
-          h2("Talks 🎙️"),
-          talks.map(_.render),
-        ),
-        // ---
-        tags2.section(
-          *.cls := "pt-4",
-          *.cls := "border-x-0",
-          h2("Publications 📜"),
-          publications.map(_.render),
         ),
       )
 
