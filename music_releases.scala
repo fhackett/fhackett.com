@@ -417,7 +417,7 @@ object music_releases extends Target:
             *.cls := "italic",
             date,
           ),
-          span(
+          tags.span(
             *.cls := "flex-grow",
           ),
           soundCloud match
