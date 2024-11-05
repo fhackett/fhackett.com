@@ -1,4 +1,5 @@
-name: Deploy SolidStart site to Pages
+name: Deploy site to Pages
+# Based on SolidStart deploy
 
 on:
   # Runs on pushes targeting the default branch
@@ -30,13 +31,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Setup scala-cli
+        uses: VirtusLab/scala-cli-setup@main
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
-      - run: bun install && bun run build
+      - run: scala-cli run . --main-class io.github.fhackett.build && cd prebuild && bun run build
         working-directory: ${{ env.BUILD_PATH }}
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ env.BUILD_PATH }}/.output/public
+          path: ${{ env.BUILD_PATH }}/prebuild/dist/
 
   deploy:
     environment:
