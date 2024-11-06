@@ -270,12 +270,16 @@ extension (ctx: StringContext)
           paragraphs.last += part
           modOpt.foreach(paragraphs.last += _)
         case (InitMarker.Line(""), modOpt) =>
-          if paragraphs.last.nonEmpty
-          then paragraphs += mutable.ArrayBuffer.empty
+          paragraphs += mutable.ArrayBuffer.empty
           modOpt.foreach(paragraphs.last += _)
         case (InitMarker.Line(line), modOpt) =>
           paragraphs.last += "\n"
           paragraphs.last += line
           modOpt.foreach(paragraphs.last += _)
 
-    paragraphs.iterator.filter(_.nonEmpty).map(_.toSeq).map(p(_*)).toSeq
+    // FIXME: why does this still ouput empty paragraphs?
+    paragraphs.iterator
+      .filter(_.nonEmpty)
+      .map(_.toSeq)
+      .map(p(_*))
+      .toSeq

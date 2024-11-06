@@ -116,3 +116,15 @@ object people:
   object migod extends Person:
     val name = "Michael W. Godfrey"
     val href = Some("https://plg.uwaterloo.ca/~migod/")
+
+  object stephanMerz extends Person:
+    val name = "Stephan Merz"
+    val href = Some("https://members.loria.fr/SMerz/")
+
+  object horatiuCirstea extends Person:
+    val name = "Horatiu Cirstea"
+    val href = Some("https://members.loria.fr/HCirstea/")
+
+  object matthewJohnson extends Person:
+    val name = "Matthew Johnson"
+    val href = Some("https://www.microsoft.com/en-us/research/people/matjoh/")

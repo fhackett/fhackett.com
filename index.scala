@@ -58,7 +58,6 @@ object index extends Target:
             *.cls := "lg:border-r-gray",
             *.cls := "lg:border-r-double",
             h2("Self-Introduction 📖"),
-            // TODO: add internships
             frag"""
               I'm a PhD student in the ${a(
                 *.href := "https://systopia.cs.ubc.ca/",
@@ -68,23 +67,53 @@ object index extends Target:
                 "Software Practices"
               )} labs at the University of British Columbia.
               My interests relate to programming language design in an applied context, with an ongoing focus on formal modeling languages.
-              I want full-stack verified software development, from modeling the target system to dealing with performance engineering practicalities and mainenance, to be a realistic option for developers.
+              I want full-stack verified software development, from modeling the target system to dealing with performance engineering practicalities and maintenance, to be a realistic option for developers.
               That switch, between modeling concerns and implementation issues, is a particular point of friction that I'm working to alleviate.
 
               My work so far has been as a developer of the ${a(
                 *.href := "https://github.com/DistCompiler/pgo",
                 "PGo project"
               )}, a compiler for verified distributed system models.
-              I am also working on a follow-up project, ${a(
+              You can read about it in our ASPLOS'23 paper, and we have working demo systems including a Raft-based key-value store.
+              
+              I am working on a follow-up project, ${a(
                 *.href := "https://github.com/DistCompiler/dcal",
                 "DCal"
               )} (note: very much pre-alpha), which introduces guided term rewriting into distributed system model compilation.
               The goal is to allow a developer to explain mismatches between their model and intended working system, such that the compiler can reliably generate that intended system.
               
-              You might also be interested in my work on the interface-level ${a(
-                *.href := "https://github.com/tlaplus/azure-cosmos-tla/tree/master/simple-model",
-                "modeling of Azure Cosmos DB in TLA+"
-              )}.
+              Here are also some recent internships:
+              ${ul(
+                *.cls := "mt-1",
+                *.cls := "pl-4",
+                *.cls := "list-square",
+                tags.li(frag"""
+                  I'm currently (September-November'24) visiting ${people.stephanMerz.link}, ${people.horatiuCirstea.link}, and the rest of the ${a(
+                    *.href := "https://team.inria.fr/veridis/",
+                    "VeriDis"
+                  )} team at Inria/Loria in Nancy, France.
+                  We're working on extending their work on ${a(
+                    *.href := "https://arxiv.org/abs/2404.16075",
+                    "trace validation"
+                  )}, applying it in the context of the PGo compiler and our verified distributed systems.
+                """),
+                tags.li(frag"""
+                  In June-August'24, I interned at Microsoft Research Cambridge with the ${a(
+                    *.href := "https://github.com/microsoft/Trieste",
+                    "Trieste"
+                  )} project group.
+                  My mentor was ${people.matthewJohnson.link}, and I also collaborated with ${people.matthewParkinson.link}, working on improving the technology underlying Trieste (optimizations, bugfixes, demo documentation).
+                  The DCal project's architecture is inspired by what I learned here, in terms of building a framework for experimenting with language design.
+                """),
+                tags.li(frag"""
+                  In June-August'22, I worked with ${people.makuppe.link} at Microsoft Research Redmond to produce an interface-level ${a(
+                    *.href := "https://github.com/tlaplus/azure-cosmos-tla/tree/master/simple-model",
+                    "model of Azure Cosmos DB in TLA+"
+                  )}.
+                  Through this, we explored the use of TLA+ as a documentation tool for the complicated concurrency behavior of cloud services.
+                  See our ICSE-SEIP'23 and :login; articles for details.
+                """)
+              )}
 
               Regardless of how up to date the above ideas are, this website is a catalog of things I've built or thought about.
               This includes my research projects, talks (including video links when possible), peer-reviewed publications, and over 10 years' worth of electronic music production.
