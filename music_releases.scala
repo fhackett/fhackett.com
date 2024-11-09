@@ -95,6 +95,8 @@ object music_releases extends Target:
       coverArt = "/album-covers/half past never.png",
       bandCamp =
         Some("https://alistairthemany.bandcamp.com/album/half-past-never"),
+      soundCloud =
+        Some("https://soundcloud.com/finnhackett/sets/half-past-never"),
       content = frag"""
           I wanted to focus on arrhythmia.
           It's easy when producing to let your DAW's tempo tell you what to do, and I wanted to push my attention toward avoiding that, while writing some faster stuff.
@@ -453,6 +455,19 @@ object music_releases extends Target:
           tags.span(
             *.cls := "flex-grow"
           ),
+          bandCamp match
+            case None => ""
+            case Some(bandCamp) =>
+              a(
+                *.cls := "ml-3",
+                *.href := bandCamp,
+                img(
+                  *.src := "/icons/bandcamp-logotype-color-128.png",
+                  *.cls := "h-1em",
+                  *.cls := "inline",
+                  *.cls := "align-middle"
+                )
+              ),
           soundCloud match
             case None => ""
             case Some(soundCloud) =>
@@ -463,19 +478,6 @@ object music_releases extends Target:
                   *.src := "/icons/54546-1717072325-sc-logo-cloud-black-7412d7.svg",
                   *.cls := "h-1em",
                   *.cls := "inline"
-                )
-              ),
-          bandCamp match
-            case None => ""
-            case Some(bandCamp) =>
-              a(
-                *.cls := "ml-3",
-                *.href := bandCamp,
-                img(
-                  *.src := "/icons/bandcamp-logotype-color-128.png",
-                  *.cls := "h-1.5em",
-                  *.cls := "inline",
-                  *.cls := "align-middle"
                 )
               )
         ),
