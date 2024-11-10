@@ -90,6 +90,41 @@ object music_releases extends Target:
 
   val releases: List[Release] = List(
     Release(
+      name = "dreamcatcher",
+      date = "November'24",
+      coverArt = "/album-covers/dreamcatcher.png",
+      bandCamp = Some("https://alistairthemany.bandcamp.com/album/dreamcatcher"),
+      soundCloud = Some("https://soundcloud.com/finnhackett/sets/dreamcatcher"),
+      content = frag"""
+          On a technical level, much of this album is me trying to better understand cymbals.
+          For something you can reductively describe as lightly curved bits of metal, they are way more complex than you'd think.
+          Mixing them to get that "big" sound is, likewise, quite tricky.
+
+          I've always looked up to artists who can express complex, engaging patterns in music.
+          Prog rock and math rock come to mind, but on a different day I might mention something else.
+          It's not like most of my music doesn't have odd meters / timings / etc in it, especially with my latest album "half past never", but I wanted to really go all in on making something complex but catchy.
+          Kind of like a little dream diary, of mostly fun and interesting dreams.
+          Nightmares, we can do some other time.
+
+          Well, here it is.
+          Something to keep my mind off being away from home on an extended trip that's lasted almost 6 months.
+
+          Several pieces are also inspired in part by Martin Hackett's flute playing.
+          He sent me several samples, which I used in most of the tracks in the second half.
+
+          The album art is an edited photo of graffiti that we found on a stone monolith in Parc Barbieux, Lille, France.
+          Just towering out of the grass among the trees, with nothing else written on it.
+          An odd sight, especially given the relatively atypical graffiti style.
+
+          ${credits(
+            li("""Martin Hackett, tin whistle and Quena on "fetch the etching fluid", "a hidden cavern full of lies", "but there's sand in the hourglass", "black hole in the river", and "and so I became non-linear"."""),
+            li("""Tim Straubinger, foley percussion on "black hole in the river" and "far woodpecker"."""),
+            li("""Shayan Hosseini: foley and chatter in between takes for an academic presentation on "black hole in the river"."""),
+            li("""Ivan Beschastnikh: birdsong foley on "the smallest puzzle"."""),
+          )}
+      """,
+    ),
+    Release(
       name = "half past never",
       date = "August'24",
       coverArt = "/album-covers/half past never.png",
