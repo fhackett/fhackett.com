@@ -238,7 +238,9 @@ object index extends Target:
           href =
             "https://www.cst.cam.ac.uk/research/themes/systems-and-networking",
           hosts = List(people.mort),
-          videoHref = Some("https://www.cl.cam.ac.uk/research/srg/seminars/videos/2024-11-14.mp4")
+          videoHref = Some(
+            "https://www.cl.cam.ac.uk/research/srg/seminars/videos/2024-11-14.mp4"
+          )
         ),
         Venue(
           date = "October'24",
@@ -347,7 +349,7 @@ object index extends Target:
       name: String,
       href: String,
       hosts: List[people.Person],
-      videoHref: Option[String] = None,
+      videoHref: Option[String] = None
   ) extends Renderable:
     def render: Text.Modifier =
       modifier(
@@ -378,8 +380,7 @@ object index extends Target:
       href: Option[String],
       venueName: String,
       venueHref: String,
-      authors: List[people.Person],
-      readBy: Option[Frag] = None
+      authors: List[people.Person]
   ) extends Renderable:
     def render: Text.Modifier =
       div(
@@ -421,7 +422,8 @@ object index extends Target:
       venueHref: String,
       authors: List[people.Person],
       pdfLink: Option[String] = None,
-      badges: Option[Text.Modifier] = None
+      badges: Option[Text.Modifier] = None,
+      readBy: Option[Modifier] = None
   ) extends Renderable:
     def render: Text.Modifier =
       div(
@@ -463,7 +465,15 @@ object index extends Target:
           span(
             people.authorList(authors)
           )
-        )
+        ),
+        readBy match
+          case None => modifier()
+          case Some(readBy) =>
+            div(
+              *.cls := "ml-8",
+              *.cls := "mt-2",
+              readBy
+            )
       )
 
   val publications: List[Publication] = List(
@@ -475,7 +485,13 @@ object index extends Target:
       venueHref = "https://www.usenix.org/publications/loginonline/",
       pdfLink =
         Some("/files/_login__Going_Beyond_an_Incident_Report_with_TLA_.pdf"),
-      authors = List(people.fhackett, people.josuaRowe, people.makuppe)
+      authors = List(people.fhackett, people.josuaRowe, people.makuppe),
+      readBy = Some(
+        frag"""❤️ ${a(
+            *.href := "https://muratbuffalo.blogspot.com/2023/08/going-beyond-incident-report-with-tla.html",
+            "Commentary blog post"
+          )} by ${people.murat.link}"""
+      )
     ),
     Publication(
       title = "Compiling Distributed System Models with PGo",
@@ -526,7 +542,13 @@ object index extends Target:
       venueName = "ICSE-SEIP'23",
       venueHref = "https://conf.researchr.org/track/icse-2023/icse-2023-SEIP",
       pdfLink = Some("/files/icse-seip-23-inconsistency.pdf"),
-      authors = List(people.fhackett, people.josuaRowe, people.makuppe)
+      authors = List(people.fhackett, people.josuaRowe, people.makuppe),
+      readBy = Some(
+        frag"""❤️ ${a(
+            *.href := "https://muratbuffalo.blogspot.com/2024/06/understanding-inconsistency-in-azure.html",
+            "Commentary blog post"
+          )} by ${people.murat.link}"""
+      )
     ),
     Publication(
       title = "mel- model extractor language for extracting facts from models",

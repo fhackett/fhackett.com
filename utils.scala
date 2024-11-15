@@ -249,9 +249,12 @@ extension (ctx: StringContext)
     ctx.parts.iterator
       .zip(modifiers.iterator.map(Some.apply) ++ Iterator.single(None))
       .flatMap:
+        case ("", None) => Iterable.empty
+        case ("", Some(mod)) =>
+          Iterator.single((InitMarker.Part(""), Some(mod)))
         case (part, modOpt) =>
           val partLines = part.linesIterator.toSeq
-          assert(partLines.nonEmpty)
+          assert(partLines.nonEmpty, s"part with no lines? part was \"$part\"")
           if partLines.size == 1
           then Iterator.single(InitMarker.Part(partLines.head) -> modOpt)
           else

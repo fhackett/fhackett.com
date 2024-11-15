@@ -93,7 +93,8 @@ object music_releases extends Target:
       name = "dreamcatcher",
       date = "November'24",
       coverArt = "/album-covers/dreamcatcher.png",
-      bandCamp = Some("https://alistairthemany.bandcamp.com/album/dreamcatcher"),
+      bandCamp =
+        Some("https://alistairthemany.bandcamp.com/album/dreamcatcher"),
       soundCloud = Some("https://soundcloud.com/finnhackett/sets/dreamcatcher"),
       content = frag"""
           On a technical level, much of this album is me trying to better understand cymbals.
@@ -117,12 +118,18 @@ object music_releases extends Target:
           An odd sight, especially given the relatively atypical graffiti style.
 
           ${credits(
-            li("""Martin Hackett, tin whistle and Quena on "fetch the etching fluid", "a hidden cavern full of lies", "but there's sand in the hourglass", "black hole in the river", and "and so I became non-linear"."""),
-            li("""Tim Straubinger, foley percussion on "black hole in the river" and "far woodpecker"."""),
-            li("""Shayan Hosseini: foley and chatter in between takes for an academic presentation on "black hole in the river"."""),
-            li("""Ivan Beschastnikh: birdsong foley on "the smallest puzzle"."""),
-          )}
-      """,
+          li(
+            """Martin Hackett, tin whistle and Quena on "fetch the etching fluid", "a hidden cavern full of lies", "but there's sand in the hourglass", "black hole in the river", and "and so I became non-linear"."""
+          ),
+          li(
+            """Tim Straubinger, foley percussion on "black hole in the river" and "far woodpecker"."""
+          ),
+          li(
+            """Shayan Hosseini: foley and chatter in between takes for an academic presentation on "black hole in the river"."""
+          ),
+          li("""Ivan Beschastnikh: birdsong foley on "the smallest puzzle".""")
+        )}
+      """
     ),
     Release(
       name = "half past never",

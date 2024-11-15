@@ -132,3 +132,7 @@ object people:
   object mort extends Person:
     val name = "Richard Mortier"
     val href = Some("https://www.cst.cam.ac.uk/people/rmm1002")
+
+  object murat extends Person:
+    val name = "Murat Demirbas"
+    val href = Some("https://cse.buffalo.edu/~demirbas/")
