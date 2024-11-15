@@ -119,7 +119,7 @@ object music_releases extends Target:
 
           ${credits(
           li(
-            """Martin Hackett, tin whistle and Quena on "fetch the etching fluid", "a hidden cavern full of lies", "but there's sand in the hourglass", "black hole in the river", and "and so I became non-linear"."""
+            """Martin Hackett, tin whistle, 笛子, and Quena on "fetch the etching fluid", "a hidden cavern full of lies", "but there's sand in the hourglass", "black hole in the river", and "and so I became non-linear"."""
           ),
           li(
             """Tim Straubinger, foley percussion on "black hole in the river" and "far woodpecker"."""
