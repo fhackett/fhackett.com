@@ -279,7 +279,7 @@ object index extends Target:
     Talk(
       title =
         "Promises and Challenges in Bridging TLA+ Designs with Implementations",
-      href = None,
+      href = Some("https://www.youtube.com/watch?v=W6DrQk8o5tk"),
       venueName = "TLA+Conf'24",
       venueHref = "https://conf.tlapl.us/2024/",
       authors = List(people.fhackett, people.bestchai)
