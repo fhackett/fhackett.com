@@ -233,6 +233,14 @@ object index extends Target:
       title = "Compiling Distributed System Models with PGo, and Beyond",
       venues = List(
         Venue(
+          date = "November'24",
+          name = "Cambridge University",
+          href =
+            "https://www.cst.cam.ac.uk/research/themes/systems-and-networking",
+          hosts = List(people.mort),
+          videoHref = Some("https://www.cl.cam.ac.uk/research/srg/seminars/videos/2024-11-14.mp4")
+        ),
+        Venue(
           date = "October'24",
           name = "RPTU Kaiserslautern-Landau",
           href = "https://softech.cs.rptu.de/",
@@ -338,7 +346,8 @@ object index extends Target:
       date: String,
       name: String,
       href: String,
-      hosts: List[people.Person]
+      hosts: List[people.Person],
+      videoHref: Option[String] = None,
   ) extends Renderable:
     def render: Text.Modifier =
       modifier(
@@ -349,6 +358,16 @@ object index extends Target:
           *.href := href,
           s"@$name"
         ),
+        videoHref match
+          case None => ""
+          case Some(videoHref) =>
+            modifier(
+              " ",
+              a(
+                *.href := videoHref,
+                "[video]"
+              )
+            ),
         " (hosted by ",
         people.authorList(hosts),
         ")"
