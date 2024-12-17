@@ -49,9 +49,10 @@ object index extends Target:
           *.cls := "divide-gray",
           *.cls := "divide-solid",
           // 2 col version
+          *.cls := "lg:columns-2",
           *.cls := "lg:divide-y-0",
           *.cls := "lg:grid",
-          *.cls := "lg:grid-cols-[repeat(1,auto)min-content]",
+          *.cls := "lg:grid-cols-[repeat(1,70%)30%]",
           tags2.section(
             *.cls := "lg:pr-2",
             *.cls := "lg:border-r-2",
@@ -73,16 +74,13 @@ object index extends Target:
               My work so far has been as a developer of the ${a(
                 *.href := "https://github.com/DistCompiler/pgo",
                 "PGo project"
-              )}, a compiler for verified distributed system models.
-              You can read about it in our ASPLOS'23 paper, and we have working demo systems including a Raft-based key-value store.
-              
+              )}, a compiler for verified distributed system models (see projects page).
               I am working on a follow-up project, ${a(
                 *.href := "https://github.com/DistCompiler/dcal",
                 "DCal"
               )} (note: very much pre-alpha), which introduces guided term rewriting into distributed system model compilation.
-              The goal is to allow a developer to explain mismatches between their model and intended working system, such that the compiler can reliably generate that intended system.
-              
-              Here are also some recent internships:
+
+              Here are also some recent internships I took part in:
               ${ul(
                 *.cls := "mt-1",
                 *.cls := "pl-4",
@@ -115,11 +113,9 @@ object index extends Target:
                 """)
               )}
 
-              Regardless of how up to date the above ideas are, this website is a catalog of things I've built or thought about.
-              This includes my research projects, talks (including video links when possible), peer-reviewed publications, and over 10 years' worth of electronic music production.
+              Have a look around to see various things I've done.
 
-              If you're an undergraduate student reading this who wants to get involved in research, feel free to get in touch.
-              We could work out some sort of collaboration, or, failing that, I could at least point you toward someone whose work might be a better fit for your interests.
+              If you're looking to collaborate (perhaps you're an undergrad thinking about research), then feel free to reach out and ask.
 
               Also, check out Martin Hackett, whose paintings I used as part of this website's design.
             """
@@ -196,6 +192,35 @@ object index extends Target:
                 ),
                 tags.span("🎓"),
                 li("BSc w/Co-op, University of British Columbia, 2013-2018.")
+              )
+            ),
+            tags2.section(
+              *.cls := "pt-4",
+              *.cls := "lg:pl-2",
+              *.cls := "border-x-0",
+              h2("Awards 🏆"),
+              ul(
+                *.cls := "list-none",
+                *.cls := "m-0",
+                *.cls := "mb-4",
+                *.cls := "p-0",
+                *.cls := "inline-grid",
+                *.cls := "grid-cols-[repeat(1,min-content)auto]",
+                *.cls := "gap-3",
+                tags.span("⭐"),
+                li("MongoDB PhD Fellowship (2024-2025)."),
+                tags.span("⭐"),
+                li("Student Community Building Award (2023)."),
+                tags.span("⭐"),
+                li("Graduate Teaching Assistant Award (2022)."),
+                tags.span("⭐"),
+                li("MITACS Accelerate (2019 - 2020)."),
+                tags.span("⭐"),
+                li(
+                  "Martin Frauendorf Memorial Prize in Computer Science (2018)."
+                ),
+                tags.span("⭐"),
+                li("International Leader of Tomorrow (2013-2018).")
               )
             )
           )
