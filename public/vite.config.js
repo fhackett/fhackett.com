@@ -4,6 +4,7 @@ export default {
   plugins: [
     UnoCSS(),
   ],
+  publicDir: "files",
   build: {
     rollupOptions: {
       input: {

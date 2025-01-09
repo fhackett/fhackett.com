@@ -24,6 +24,7 @@ def build(): Unit =
   val publicFiles =
     os.walk(dirs.public)
       .view
+      .filter(os.isFile)
       .map(_.relativeTo(dirs.public))
       .toSet
 
