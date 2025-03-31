@@ -1,12 +1,14 @@
 //> using scala 3
 //> using options -Werror -deprecation -feature -Yexplicit-nulls
-//> using dep com.lihaoyi::os-lib:0.11.3
-//> using dep com.lihaoyi::os-lib-watch:0.11.3
+//> using dep com.lihaoyi::os-lib:0.11.4
+//> using dep com.lihaoyi::os-lib-watch:0.11.4
 //> using dep com.lihaoyi::scalatags:0.13.1
-package io.github.fhackett
+package site
 
+import scala.collection.mutable
 import scala.util.Using
 import java.io.Closeable
+import scala.annotation.tailrec
 
 object dirs:
   val public = os.pwd / "public"
@@ -64,7 +66,7 @@ def build(): Unit =
         createFolders = true
       )
 
-  os.proc("bun", "install").call(cwd = dirs.prebuild)
+  os.proc("npm", "install").call(cwd = dirs.prebuild)
 
   targets.foreach: target =>
     println(s"regenerating ${dirs.prebuild / target.path}")
@@ -72,23 +74,40 @@ def build(): Unit =
 
 @main
 def dev(): Unit =
-  def waitingMsg(): Unit =
-    println(s"watching for changes in ${dirs.public}, Ctrl^C to end")
+  object state:
+    private val changes = mutable.HashSet[os.Path](dirs.public)
+    private var lastDebounce: Long = 0
 
-  build()
-  waitingMsg()
+    def witnessChanges(changes: Set[os.Path]): Unit =
+      synchronized:
+        this.changes ++= changes
+        println(s"saw changes:")
+        changes.foreach: path =>
+          println(s"  $path")
+        lastDebounce = System.currentTimeMillis()
+        println("debounced rebuild in >=500ms...")
+
+    @tailrec
+    def eventLoop(printMsg: Boolean): Unit =
+      val printMsgRec =
+        synchronized:
+          if printMsg
+          then println(s"watching for changes in ${dirs.public}, Ctrl^C to end")
+          wait(500)
+          if changes.nonEmpty && System
+              .currentTimeMillis() - lastDebounce >= 500
+          then
+            changes.clear()
+            println("rebuilding now.")
+            build()
+            true
+          else false
+      eventLoop(printMsg = printMsgRec)
 
   Using.resource(
     os.watch.watch(
       Seq(dirs.public),
-      changes =>
-        println(s"saw changes:")
-        changes.foreach: path =>
-          println(s"  $path")
-        println("rebuilding...")
-        build()
-        waitingMsg()
+      state.witnessChanges
     )
   ): _ =>
-    // have a seat and let the other threads work
-    Thread.currentThread().join()
+    state.eventLoop(printMsg = true)

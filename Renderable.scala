@@ -1,4 +1,4 @@
-package io.github.fhackett
+package site
 
 trait Renderable:
   def render: scalatags.Text.Modifier

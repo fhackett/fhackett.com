@@ -1,4 +1,4 @@
-package io.github.fhackett
+package site
 
 import scalatags.Text.Modifier
 import customtags.*
