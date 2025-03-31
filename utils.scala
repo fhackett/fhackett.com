@@ -21,7 +21,7 @@ object customtags:
     h3 as _,
     li as _,
     span as _,
-    *
+    *,
   }
 
   trait CustomTag:
@@ -47,8 +47,8 @@ object customtags:
         styles,
         tags.span(
           spanStyles,
-          mods
-        )
+          mods,
+        ),
       )
 
   trait WithInnerWhiteBgSpan extends WithInnerSpan:
@@ -61,7 +61,7 @@ object customtags:
       *.cls := "underline",
       *.cls := "hover:no-underline",
       *.cls := "color-black",
-      *.cls := "bg-white"
+      *.cls := "bg-white",
     )
 
   object p extends WithInnerWhiteBgSpan:
@@ -79,7 +79,7 @@ object customtags:
     val styles =
       modifier(
         *.cls := "mt-0",
-        *.cls := "mb-2"
+        *.cls := "mb-2",
       )
 
   object li extends WithInnerWhiteBgSpan:
@@ -90,7 +90,7 @@ object customtags:
     val tag = tags.hr
     val styles = List(
       *.cls := "border-solid-1",
-      *.cls := "border-gray-50"
+      *.cls := "border-gray-50",
     )
 
   object span extends CustomTag:
@@ -135,11 +135,11 @@ def wrapHeader(content: Frag): geny.Writable =
             *.cls := "bg-white",
             "Finn Hackett",
             sub("(he/they)"),
-            ", MMath"
-          )
+            ", MMath",
+          ),
         ),
         tags.span(
-          *.cls := "flex-grow"
+          *.cls := "flex-grow",
         ),
         a(
           *.cls := "md:hidden",
@@ -150,7 +150,7 @@ def wrapHeader(content: Frag): geny.Writable =
             *.cls := "p-2",
             *.cls := "inline",
             *.id := "navbar-open",
-            *.src := "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M3 18h18v-2H3zm0-5h18v-2H3zm0-7v2h18V6z'/%3E%3C/svg%3E"
+            *.src := "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M3 18h18v-2H3zm0-5h18v-2H3zm0-7v2h18V6z'/%3E%3C/svg%3E",
           ),
           img(
             *.cls := "h-1.5em",
@@ -158,20 +158,20 @@ def wrapHeader(content: Frag): geny.Writable =
             *.cls := "inline",
             *.cls := "hidden",
             *.id := "navbar-close",
-            *.src := "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 20 20'%3E%3Cpath fill='black' d='M2.93 17.07A10 10 0 1 1 17.07 2.93A10 10 0 0 1 2.93 17.07m1.41-1.41A8 8 0 1 0 15.66 4.34A8 8 0 0 0 4.34 15.66m9.9-8.49L11.41 10l2.83 2.83l-1.41 1.41L10 11.41l-2.83 2.83l-1.41-1.41L8.59 10L5.76 7.17l1.41-1.41L10 8.59l2.83-2.83z'/%3E%3C/svg%3E"
-          )
-        )
+            *.src := "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 20 20'%3E%3Cpath fill='black' d='M2.93 17.07A10 10 0 1 1 17.07 2.93A10 10 0 0 1 2.93 17.07m1.41-1.41A8 8 0 1 0 15.66 4.34A8 8 0 0 0 4.34 15.66m9.9-8.49L11.41 10l2.83 2.83l-1.41 1.41L10 11.41l-2.83 2.83l-1.41-1.41L8.59 10L5.76 7.17l1.41-1.41L10 8.59l2.83-2.83z'/%3E%3C/svg%3E",
+          ),
+        ),
       ),
       tags.span(
         *.cls := "hidden",
         *.cls := "md:flex-grow",
-        *.cls := "md:inline"
+        *.cls := "md:inline",
       ),
       modifier(
         (Seq(
           ("Intro", index.href),
           ("Research Projects", research_projects.href),
-          ("Music Releases", music_releases.href)
+          ("Music Releases", music_releases.href),
         ).map: (name, href) =>
           tags.a(
             *.cls := "p-2",
@@ -186,10 +186,10 @@ def wrapHeader(content: Frag): geny.Writable =
             *.href := href,
             span(
               *.cls := "bg-white",
-              name
-            )
-          ))*
-      )
+              name,
+            ),
+          ))*,
+      ),
     )
 
   *.doctype("html"):
@@ -199,11 +199,11 @@ def wrapHeader(content: Frag): geny.Writable =
         meta(*.charset := "utf-8"),
         meta(
           *.name := "viewport",
-          *.content := "width=device-width, initial-scale=1"
+          *.content := "width=device-width, initial-scale=1",
         ),
         link(*.rel := "icon", *.href := "/favicon.svg"),
         script(*.`type` := "module", *.src := "./main.js"),
-        tags2.title("Finn Hackett")
+        tags2.title("Finn Hackett"),
       ),
       body(
         *.cls := "font-[Montserrat]",
@@ -229,10 +229,10 @@ def wrapHeader(content: Frag): geny.Writable =
           span(
             "© ",
             LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy")),
-            " Finn Hackett"
-          )
-        )
-      )
+            " Finn Hackett",
+          ),
+        ),
+      ),
     )
 
 extension (ctx: StringContext)
@@ -265,7 +265,7 @@ extension (ctx: StringContext)
                 .map: line =>
                   InitMarker.Line(line.stripLeading()) -> None)
               ++ Iterator.single(
-                InitMarker.Line(partLines.last.stripLeading()) -> modOpt
+                InitMarker.Line(partLines.last.stripLeading()) -> modOpt,
               )
       .foreach:
         case (InitMarker.Part(""), None) =>

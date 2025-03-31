@@ -20,7 +20,7 @@ def build(): Unit =
     index,
     music_releases,
     research_projects,
-    `404`
+    `404`,
   )
 
   val publicFiles =
@@ -63,7 +63,7 @@ def build(): Unit =
       os.copy.over(
         from = dirs.public / file,
         to = dirs.prebuild / file,
-        createFolders = true
+        createFolders = true,
       )
 
   os.proc("npm", "install").call(cwd = dirs.prebuild)
@@ -107,7 +107,7 @@ def dev(): Unit =
   Using.resource(
     os.watch.watch(
       Seq(dirs.public),
-      state.witnessChanges
-    )
+      state.witnessChanges,
+    ),
   ): _ =>
     state.eventLoop(printMsg = true)

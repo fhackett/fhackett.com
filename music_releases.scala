@@ -19,21 +19,21 @@ object music_releases extends Target:
         *.cls := "flex-col",
         *.cls := "items-center",
         h2.withStyles(*.cls := "mt-4")(
-          "Music Releases"
+          "Music Releases",
         ),
         p.withStyles(
           *.cls := "max-w-xl",
           *.cls := "text-center",
-          *.cls := "mb-0"
+          *.cls := "mb-0",
         )(
           "Here is most of the music I've made since I started in high school, around 2010.",
-          " Genres are just a label, but to give you an idea, I'm somehow inspired by dub, techno, ambient music, breakbeats, breakcore, math rock, stuff like that."
+          " Genres are just a label, but to give you an idea, I'm somehow inspired by dub, techno, ambient music, breakbeats, breakcore, math rock, stuff like that.",
         ),
         hr(
           *.cls := "w-sm",
           *.cls := "border-gray-500",
           *.cls := "border-solid",
-          *.cls := "my-4"
+          *.cls := "my-4",
         ),
         div(
           *.cls := "flex",
@@ -44,21 +44,21 @@ object music_releases extends Target:
           *.cls := "items-stretch",
           *.cls := "gap-4",
           *.cls := "mb-3",
-          releases.map(_.render)
-        )
+          releases.map(_.render),
+        ),
       )
 
   def credits(content: Text.Modifier*): Text.Modifier =
     div(
       span(
-        "Credits: "
+        "Credits: ",
       ),
       ul(
         *.cls := "mt-1",
         *.cls := "pl-4",
         *.cls := "list-square",
-        content
-      )
+        content,
+      ),
     )
 
   def showMore(maxCls: String)(content: Text.Modifier*): Text.Modifier =
@@ -69,7 +69,7 @@ object music_releases extends Target:
         *.cls := maxCls,
         *.cls := s"show-more-cls-$maxCls",
         *.cls := "overflow-y-hidden",
-        content
+        content,
       ),
       a(
         *.cls := "block",
@@ -77,15 +77,15 @@ object music_releases extends Target:
         *.cls := "hidden",
         *.cls := "italic",
         *.cls := "pt-2",
-        "...Show more"
+        "...Show more",
       ),
       a(
         *.cls := "block",
         *.cls := "show-more-button-less",
         *.cls := "hidden",
         *.cls := "pt-2",
-        "Show less"
-      )
+        "Show less",
+      ),
     )
 
   val releases: List[Release] = List(
@@ -119,17 +119,17 @@ object music_releases extends Target:
 
           ${credits(
           li(
-            """Martin Hackett, tin whistle, 笛子, and Quena on "fetch the etching fluid", "a hidden cavern full of lies", "but there's sand in the hourglass", "black hole in the river", and "and so I became non-linear"."""
+            """Martin Hackett, tin whistle, 笛子, and Quena on "fetch the etching fluid", "a hidden cavern full of lies", "but there's sand in the hourglass", "black hole in the river", and "and so I became non-linear".""",
           ),
           li(
-            """Tim Straubinger, foley percussion on "black hole in the river" and "far woodpecker"."""
+            """Tim Straubinger, foley percussion on "black hole in the river" and "far woodpecker".""",
           ),
           li(
-            """Shayan Hosseini: foley and chatter in between takes for an academic presentation on "black hole in the river"."""
+            """Shayan Hosseini: foley and chatter in between takes for an academic presentation on "black hole in the river".""",
           ),
-          li("""Ivan Beschastnikh: birdsong foley on "the smallest puzzle".""")
+          li("""Ivan Beschastnikh: birdsong foley on "the smallest puzzle"."""),
         )}
-      """
+      """,
     ),
     Release(
       name = "half past never",
@@ -148,21 +148,21 @@ object music_releases extends Target:
           ${credits(
           li("Kaddy Beck, sculpture used in album art."),
           li(
-            """Martin Hackett, Korg MS-20 on "crystal hexagons that don't melt".""""
+            """Martin Hackett, Korg MS-20 on "crystal hexagons that don't melt"."""",
           ),
           li(
-            """Tim Straubinger, databending on "crystal hexagons that don't melt".""""
+            """Tim Straubinger, databending on "crystal hexagons that don't melt"."""",
           ),
-          li("""Kira Potter, vocals on "green algae on our cobalt beach"""")
+          li("""Kira Potter, vocals on "green algae on our cobalt beach""""),
         )}
-        """
+        """,
     ),
     Release(
       name = "no clicks at all; there it is again",
       date = "February'24",
       coverArt = "/album-covers/lake with green and grey conifers.png",
       soundCloud = Some(
-        "https://soundcloud.com/finnhackett/sets/no-clicks-at-all-there-it-is"
+        "https://soundcloud.com/finnhackett/sets/no-clicks-at-all-there-it-is",
       ),
       content = frag"""
           Collaboration with Martin Hackett, whose synth playing is featured on all tracks.
@@ -170,7 +170,7 @@ object music_releases extends Target:
           Originally an exercise in imagining Martin's playing as techno, the album grew out of different sessions of editing some performances he recorded for me.
 
           Credit to Kira Potter for keyboard arrangements woven into "sailor take warning", and general thoughts on the tracks.
-        """
+        """,
     ),
     Release(
       name = "brain slice",
@@ -185,14 +185,14 @@ object music_releases extends Target:
           I learned some cool sound design stuff along the way.
 
           Credit to Kira Potter for little bits of advice on many tracks, and for inspiring the cover + title.
-        """
+        """,
     ),
     Release(
       name = "kinda strictly sorta maybe?",
       date = "July'23",
       coverArt = "/album-covers/kinda strictly sorta maybe cover.png",
       soundCloud = Some(
-        "https://soundcloud.com/finnhackett/sets/kinda-strictly-sorta-maybe"
+        "https://soundcloud.com/finnhackett/sets/kinda-strictly-sorta-maybe",
       ),
       content = frag"""
           I guess...
@@ -201,21 +201,21 @@ object music_releases extends Target:
 
           ${credits(
           li(
-            "Martin Hackett, Korg MS-20 played on \"monsieur hulot's pipe machine\"."
+            "Martin Hackett, Korg MS-20 played on \"monsieur hulot's pipe machine\".",
           ),
           li("Onkle Honky, horn demo on \"monsieur hulot's pipe machine\"."),
           li(
-            "[redacted] Airlines, announcements on \"that's not wensleydale, gromit!\", \"modern glass\", and \"mercury\"."
+            "[redacted] Airlines, announcements on \"that's not wensleydale, gromit!\", \"modern glass\", and \"mercury\".",
           ),
           li(
-            "Shayan Hosseini, academic presentation resampled on \"boat trip in amber\"."
-          )
+            "Shayan Hosseini, academic presentation resampled on \"boat trip in amber\".",
+          ),
         )}
 
           Other samples include Australian birdlife and foley I recorded on a trip.
           Mildly interesting: there is some heavily processed amateur beatboxing by me on "became flowers".
           A majority of the percussion is synthesized from basic waveforms, though not with any particular discipline or anything.
-        """
+        """,
     ),
     Release(
       name = "athena's playground",
@@ -232,25 +232,25 @@ object music_releases extends Target:
           ${credits(
           li("""Zach Morgenstern: vocals+lyrics on "avcodec mangrove nice""""),
           li(
-            """Tim Straubinger: very nice.zip data bending on "avcodec mangrove nice" and "very nice digital mold.mkl_core""""
+            """Tim Straubinger: very nice.zip data bending on "avcodec mangrove nice" and "very nice digital mold.mkl_core"""",
           ),
           li(
-            """Alex Trostanovsky: guitar and a MIDI clip on "triangle sound""""
+            """Alex Trostanovsky: guitar and a MIDI clip on "triangle sound"""",
           ),
           li(
-            """Shaurya Patel: spoken word on "an iridescent manifold", spoken word and Sitar on "very nice digital mold.mkl_core" and "one more time""""
-          )
+            """Shaurya Patel: spoken word on "an iridescent manifold", spoken word and Sitar on "very nice digital mold.mkl_core" and "one more time"""",
+          ),
         )}
 
           Additional credit to Nicholas Ioannidis for translating the Greek joke text on the cover.
-        """
+        """,
     ),
     Release(
       name = "the mountain underground",
       date = "April'22",
       coverArt = "/album-covers/the mountain underground cover.png",
       soundCloud = Some(
-        "https://soundcloud.com/finnhackett/sets/the-mountain-underground"
+        "https://soundcloud.com/finnhackett/sets/the-mountain-underground",
       ),
       content = frag"""
           Some days, I'm not sure what this album is. It might be about me digging myself out of writer's block (or trying to).
@@ -271,13 +271,13 @@ object music_releases extends Target:
 
           ${credits(
           li(
-            "Kira Potter - comments on in-progress drafts, concept for the title."
+            "Kira Potter - comments on in-progress drafts, concept for the title.",
           ),
           li(
-            "Martin Hackett - one of his paintaings is partially visible in the album art."
-          )
+            "Martin Hackett - one of his paintaings is partially visible in the album art.",
+          ),
         )}
-          """
+          """,
     ),
     Release(
       name = "living elements",
@@ -291,23 +291,23 @@ object music_releases extends Target:
           ${credits(
           li("""Shaurya Patel: sitar on "dirty sunrise""""),
           li(
-            """Martin Hackett: Korg MS-10 on "dirty sunrise" and "controlling the media""""
+            """Martin Hackett: Korg MS-10 on "dirty sunrise" and "controlling the media"""",
           ),
           li(
-            """Kira Potter: vocals on "controlling the media" and "panpipes""""
+            """Kira Potter: vocals on "controlling the media" and "panpipes"""",
           ),
           li(
-            """Preeti Vyas: field recordings on "beachside" and "it's not that far"; vocals on "beachside"; spoken word on "it's not that far""""
+            """Preeti Vyas: field recordings on "beachside" and "it's not that far"; vocals on "beachside"; spoken word on "it's not that far"""",
           ),
           li(
-            """Zach Morgenstern: vocals on "blurry sunshine", "a hollow in the earth", and "green ball of energy"; guitar on "a hollow in the earth" and "green ball of energy""""
-          )
+            """Zach Morgenstern: vocals on "blurry sunshine", "a hollow in the earth", and "green ball of energy"; guitar on "a hollow in the earth" and "green ball of energy"""",
+          ),
         )}
 
           Note: all contributions are written/originated by the contributor in question, to then be remixed by myself into the released composition.
 
           The album art was taken under a bridge in Oxford, UK. The graffiti "contributor" is unknown.
-        """
+        """,
     ),
     Release(
       name = "water, in bloom",
@@ -327,13 +327,13 @@ object music_releases extends Target:
 
           ${credits(
           li(
-            """Tim Straubinger, a variety of short impacts and household items"""
+            """Tim Straubinger, a variety of short impacts and household items""",
           ),
           li(
-            """Ivan Beschasnikh, some of the longer-form environmental field recordings, most notably on floating forest"""
-          )
+            """Ivan Beschasnikh, some of the longer-form environmental field recordings, most notably on floating forest""",
+          ),
         )}
-        """
+        """,
     ),
     Release(
       name = "restransmit",
@@ -350,7 +350,7 @@ object music_releases extends Target:
           This is also one of my first ever releases with actual vocals, albeit synthetic ones (courtesy of the flite speech synth).
 
           I hope you're making the best of whatever you've got.
-        """
+        """,
     ),
     Release(
       name = "I saw skulls",
@@ -366,7 +366,7 @@ object music_releases extends Target:
           Also, fragments of a non-existent sci-fi movie about someone coming to terms with being lost and alone in a vast, ancient alien facility.
 
           The skull in the album cover is a decoration in my home - my partner rescued it from the UBC biology department's clear-out a few years ago.
-        """
+        """,
     ),
     Release(
       name = "pixelated beach",
@@ -381,7 +381,7 @@ object music_releases extends Target:
           
           The results ended up being some kind of noir-breakbeat-ambient... thing.
           Several tracks inspired by walking across the cliffs near Whitby in the UK, where I took some of the field recordings.
-        """
+        """,
     ),
     Release(
       name = "plastick",
@@ -395,7 +395,7 @@ object music_releases extends Target:
           It was an interesting learning experience.
 
           Also the first release I've made a conscious effort to master, so more learning there.
-        """
+        """,
     ),
     Release(
       name = "alien adventure",
@@ -414,7 +414,7 @@ object music_releases extends Target:
 
           Well, it doesn't mean that this time was useless or meaningless.
           I still have most of the kit, and I learned how to do some jury-rigged live stuff.
-        """
+        """,
     ),
     Release(
       name = "morning greyshadow",
@@ -427,7 +427,7 @@ object music_releases extends Target:
           Some rough edges.
 
           Possibly inspired by Clark and nuclear waste.
-        """
+        """,
     ),
     Release(
       name = "sky in the fish (version)",
@@ -439,7 +439,7 @@ object music_releases extends Target:
           A work in progress (maybe?) made by cutting up live sequencing/playing of a set of Korg Volcas and a Roland SH-101.
           
           Helpful extras: Korg Kaoss Pad Quad, Monotron Delay.
-        """
+        """,
     ),
     Release(
       name = "numbers",
@@ -450,7 +450,7 @@ object music_releases extends Target:
           A brief moment of sanity.
 
           Thanks to Squarepusher's Go Plastic and Biosphere's Substrata for inspiration.
-        """
+        """,
     ),
     Release(
       name = "generator",
@@ -461,8 +461,8 @@ object music_releases extends Target:
           Album focusing more on ambience and minor details.
           
           Try not to overthink the genre tags, and I hope you enjoy the story/places/whatever-comes-to-mind.
-        """
-    )
+        """,
+    ),
   )
 
   final case class Release(
@@ -471,7 +471,7 @@ object music_releases extends Target:
       coverArt: String,
       soundCloud: Option[String] = None,
       bandCamp: Option[String] = None,
-      content: Modifier = ""
+      content: Modifier = "",
   ) extends Renderable:
     def render: Text.Modifier =
       div(
@@ -492,10 +492,10 @@ object music_releases extends Target:
             *.cls := "text-base",
             *.cls := "font-normal",
             *.cls := "italic",
-            date
+            date,
           ),
           tags.span(
-            *.cls := "flex-grow"
+            *.cls := "flex-grow",
           ),
           bandCamp match
             case None => ""
@@ -507,8 +507,8 @@ object music_releases extends Target:
                   *.src := "/icons/bandcamp-logotype-color-128.png",
                   *.cls := "h-1em",
                   *.cls := "inline",
-                  *.cls := "align-middle"
-                )
+                  *.cls := "align-middle",
+                ),
               ),
           soundCloud match
             case None => ""
@@ -519,9 +519,9 @@ object music_releases extends Target:
                 img(
                   *.src := "/icons/54546-1717072325-sc-logo-cloud-black-7412d7.svg",
                   *.cls := "h-1em",
-                  *.cls := "inline"
-                )
-              )
+                  *.cls := "inline",
+                ),
+              ),
         ),
         div(
           *.cls := "music-release",
@@ -530,10 +530,10 @@ object music_releases extends Target:
           *.cls := "gap-3",
           img(
             *.cls := "w-full",
-            *.src := coverArt
+            *.src := coverArt,
           ),
           showMore("max-h-200px")(
-            content
-          )
-        )
+            content,
+          ),
+        ),
       )

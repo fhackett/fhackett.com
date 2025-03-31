@@ -24,12 +24,12 @@ object index extends Target:
       img(
         *.src := src,
         *.cls := "object-scale-down",
-        *.cls := "w-full"
+        *.cls := "w-full",
       ),
       div(
         *.cls := "text-center",
-        "© 2024 Martin Hackett"
-      )
+        "© 2024 Martin Hackett",
+      ),
     )
 
   def content: geny.Writable =
@@ -62,10 +62,10 @@ object index extends Target:
             frag"""
               I'm a PhD student in the ${a(
                 *.href := "https://systopia.cs.ubc.ca/",
-                "Systopia"
+                "Systopia",
               )} and ${a(
                 *.href := "https://spl.cs.ubc.ca/index.html",
-                "Software Practices"
+                "Software Practices",
               )} labs at the University of British Columbia.
               My interests relate to programming language design in an applied context, with an ongoing focus on formal modeling languages.
               I want full-stack verified software development, from modeling the target system to dealing with performance engineering practicalities and maintenance, to be a realistic option for developers.
@@ -73,11 +73,11 @@ object index extends Target:
 
               My work so far has been as a developer of the ${a(
                 *.href := "https://github.com/DistCompiler/pgo",
-                "PGo project"
+                "PGo project",
               )}, a compiler for verified distributed system models (see projects page).
               I am working on a follow-up project, ${a(
                 *.href := "https://github.com/DistCompiler/dcal",
-                "DCal"
+                "DCal",
               )} (note: very much pre-alpha), which introduces guided term rewriting into distributed system model compilation.
 
               Here are also some recent internships I took part in:
@@ -88,17 +88,17 @@ object index extends Target:
                 tags.li(frag"""
                   I'm currently (September-November'24) visiting ${people.stephanMerz.link}, ${people.horatiuCirstea.link}, and the rest of the ${a(
                     *.href := "https://team.inria.fr/veridis/",
-                    "VeriDis"
+                    "VeriDis",
                   )} team at Inria/Loria in Nancy, France.
                   We're working on extending their work on ${a(
                     *.href := "https://arxiv.org/abs/2404.16075",
-                    "trace validation"
+                    "trace validation",
                   )}, applying it in the context of the PGo compiler and our verified distributed systems.
                 """),
                 tags.li(frag"""
                   In June-August'24, I interned at Microsoft Research Cambridge with the ${a(
                     *.href := "https://github.com/microsoft/Trieste",
-                    "Trieste"
+                    "Trieste",
                   )} project group.
                   My mentor was ${people.matthewJohnson.link}, and I also collaborated with ${people.matthewParkinson.link}, working on improving the technology underlying Trieste (optimizations, bugfixes, demo documentation).
                   The DCal project's architecture is inspired by what I learned here, in terms of building a framework for experimenting with language design.
@@ -106,11 +106,11 @@ object index extends Target:
                 tags.li(frag"""
                   In June-August'22, I worked with ${people.makuppe.link} at Microsoft Research Redmond to produce an interface-level ${a(
                     *.href := "https://github.com/tlaplus/azure-cosmos-tla/tree/master/simple-model",
-                    "model of Azure Cosmos DB in TLA+"
+                    "model of Azure Cosmos DB in TLA+",
                   )}.
                   Through this, we explored the use of TLA+ as a documentation tool for the complicated concurrency behavior of cloud services.
                   See our ICSE-SEIP'23 and :login; articles for details.
-                """)
+                """),
               )}
 
               Have a look around to see various things I've done.
@@ -118,7 +118,7 @@ object index extends Target:
               If you're looking to collaborate (perhaps you're an undergrad thinking about research), then feel free to reach out and ask.
 
               Also, check out Martin Hackett, whose paintings I used as part of this website's design.
-            """
+            """,
           ),
           div(
             *.cls := "divide-y",
@@ -145,14 +145,14 @@ object index extends Target:
                   *.cls := "hover:no-underline",
                   *.cls := "color-black",
                   *.href := "mailto:fhackett@cs.ubc.ca",
-                  span("fhackett@cs.ubc.ca")
+                  span("fhackett@cs.ubc.ca"),
                 ),
                 // row 2
                 span("Github"),
                 img(
                   *.src := "/icons/github-mark.svg",
                   *.cls := "h-1em",
-                  *.cls := "mx-auto"
+                  *.cls := "mx-auto",
                 ),
                 span("≝"),
                 tags.a(
@@ -160,9 +160,9 @@ object index extends Target:
                   *.cls := "hover:no-underline",
                   *.cls := "color-black",
                   *.href := "https://www.github.com/fhackett",
-                  span("https://www.github.com/fhackett")
-                )
-              )
+                  span("https://www.github.com/fhackett"),
+                ),
+              ),
             ),
             // ---
             tags2.section(
@@ -182,17 +182,17 @@ object index extends Target:
                 li(
                   "PhD, University of British Columbia, 2020-current. Supervised by ",
                   people.bestchai.link,
-                  "."
+                  ".",
                 ),
                 tags.span("🎓"),
                 li(
                   "MMath, University of Waterloo, 2018-2020. Supervised by ",
                   people.olhotak.link,
-                  "."
+                  ".",
                 ),
                 tags.span("🎓"),
-                li("BSc w/Co-op, University of British Columbia, 2013-2018.")
-              )
+                li("BSc w/Co-op, University of British Columbia, 2013-2018."),
+              ),
             ),
             tags2.section(
               *.cls := "pt-4",
@@ -217,13 +217,13 @@ object index extends Target:
                 li("MITACS Accelerate (2019 - 2020)."),
                 tags.span("⭐"),
                 li(
-                  "Martin Frauendorf Memorial Prize in Computer Science (2018)."
+                  "Martin Frauendorf Memorial Prize in Computer Science (2018).",
                 ),
                 tags.span("⭐"),
-                li("International Leader of Tomorrow (2013-2018).")
-              )
-            )
-          )
+                li("International Leader of Tomorrow (2013-2018)."),
+              ),
+            ),
+          ),
         ),
         // ---
         tags2.section(
@@ -234,9 +234,9 @@ object index extends Target:
           *.cls := "lg:grid-cols-[repeat(1,3fr)1fr]",
           div(
             h2("Talks 🎙️"),
-            talks.map(_.render)
+            talks.map(_.render),
           ),
-          placeImg("/gfx/martin-1.png")
+          placeImg("/gfx/martin-1.png"),
         ),
         // ---
         tags2.section(
@@ -247,10 +247,10 @@ object index extends Target:
           *.cls := "lg:grid-cols-[repeat(1,3fr)1fr]",
           div(
             h2("Publications 📜"),
-            publications.map(_.render)
+            publications.map(_.render),
           ),
-          placeImg("/gfx/martin-2.png")
-        )
+          placeImg("/gfx/martin-2.png"),
+        ),
       )
 
   val talks: List[Talk | InvitedTalk] = List(
@@ -264,42 +264,42 @@ object index extends Target:
             "https://www.cst.cam.ac.uk/research/themes/systems-and-networking",
           hosts = List(people.mort),
           videoHref = Some(
-            "https://www.cl.cam.ac.uk/research/srg/seminars/videos/2024-11-14.mp4"
-          )
+            "https://www.cl.cam.ac.uk/research/srg/seminars/videos/2024-11-14.mp4",
+          ),
         ),
         Venue(
           date = "October'24",
           name = "RPTU Kaiserslautern-Landau",
           href = "https://softech.cs.rptu.de/",
-          hosts = List(people.annetteBieniusa)
+          hosts = List(people.annetteBieniusa),
         ),
         Venue(
           date = "August'24",
           name = "Oxford University",
           href = "https://mrg.cs.ox.ac.uk/",
-          hosts = List(people.nobukoYoshida)
+          hosts = List(people.nobukoYoshida),
         ),
         Venue(
           date = "August'24",
           name = "Imperial College London",
           href = "https://www.imperial.ac.uk/computing",
-          hosts = List(people.mariosKogias)
+          hosts = List(people.mariosKogias),
         ),
         Venue(
           date = "July'24",
           name = "Cambridge University",
           href =
             "https://www.cst.cam.ac.uk/research/themes/systems-and-networking",
-          hosts = List(people.heidiHoward, people.ryanGibb)
+          hosts = List(people.heidiHoward, people.ryanGibb),
         ),
         Venue(
           date = "January'24",
           name = "Microsoft Research Cambridge",
           href =
             "https://www.microsoft.com/en-us/research/group/azure-security-privacy/",
-          hosts = List(people.matthewParkinson)
-        )
-      )
+          hosts = List(people.matthewParkinson),
+        ),
+      ),
     ),
     Talk(
       title =
@@ -307,14 +307,14 @@ object index extends Target:
       href = Some("https://www.youtube.com/watch?v=W6DrQk8o5tk"),
       venueName = "TLA+Conf'24",
       venueHref = "https://conf.tlapl.us/2024/",
-      authors = List(people.fhackett, people.bestchai)
+      authors = List(people.fhackett, people.bestchai),
     ),
     Talk(
       title = "Turning an Incident Report into a Design Issue with TLA+",
       href = Some("https://www.youtube.com/watch?v=_-kthTsZ2qU"),
       venueName = "SREcon'23 Americas",
       venueHref = "https://www.usenix.org/conference/srecon23americas",
-      authors = List(people.fhackett, people.josuaRowe, people.makuppe)
+      authors = List(people.fhackett, people.josuaRowe, people.makuppe),
     ),
     Talk(
       title = "Building Correct Distributed Systems with the PGo Compiler",
@@ -326,8 +326,8 @@ object index extends Target:
         people.shayanh,
         people.ruchitPalrecha,
         people.yennisYe,
-        people.bestchai
-      )
+        people.bestchai,
+      ),
     ),
     Talk(
       title =
@@ -339,14 +339,14 @@ object index extends Target:
         people.fhackett,
         people.bestchai,
         people.renatoCosta,
-        people.matthewDo
-      )
-    )
+        people.matthewDo,
+      ),
+    ),
   )
 
   final case class InvitedTalk(
       title: String,
-      venues: List[Venue]
+      venues: List[Venue],
   ) extends Renderable:
     def render: Text.Modifier =
       div(
@@ -357,16 +357,16 @@ object index extends Target:
           " ",
           span(
             *.cls := "font-bold",
-            title
-          )
+            title,
+          ),
         ),
         ul(
           *.cls := "ml-8",
           *.cls := "my-0",
           *.cls := "p-0",
           *.cls := "list-none",
-          modifier(venues.map(venue => li(venue.render))*)
-        )
+          modifier(venues.map(venue => li(venue.render))*),
+        ),
       )
 
   final case class Venue(
@@ -374,7 +374,7 @@ object index extends Target:
       name: String,
       href: String,
       hosts: List[people.Person],
-      videoHref: Option[String] = None
+      videoHref: Option[String] = None,
   ) extends Renderable:
     def render: Text.Modifier =
       modifier(
@@ -383,7 +383,7 @@ object index extends Target:
         " ",
         a(
           *.href := href,
-          s"@$name"
+          s"@$name",
         ),
         videoHref match
           case None => ""
@@ -392,12 +392,12 @@ object index extends Target:
               " ",
               a(
                 *.href := videoHref,
-                "[video]"
-              )
+                "[video]",
+              ),
             ),
         " (hosted by ",
         people.authorList(hosts),
-        ")"
+        ")",
       )
 
   final case class Talk(
@@ -405,7 +405,7 @@ object index extends Target:
       href: Option[String],
       venueName: String,
       venueHref: String,
-      authors: List[people.Person]
+      authors: List[people.Person],
   ) extends Renderable:
     def render: Text.Modifier =
       div(
@@ -416,28 +416,28 @@ object index extends Target:
             *.href := venueHref,
             "[",
             venueName,
-            "]"
+            "]",
           ),
           " ",
           href match
             case None =>
               span(
                 *.cls := "font-bold",
-                title
+                title,
               )
             case Some(href) =>
               a(
                 *.cls := "font-bold",
                 *.href := href,
-                title
-              )
+                title,
+              ),
         ),
         div(
           *.cls := "ml-8",
           span(
-            people.authorList(authors)
-          )
-        )
+            people.authorList(authors),
+          ),
+        ),
       )
 
   final case class Publication(
@@ -448,7 +448,7 @@ object index extends Target:
       authors: List[people.Person],
       pdfLink: Option[String] = None,
       badges: Option[Text.Modifier] = None,
-      readBy: Option[Modifier] = None
+      readBy: Option[Modifier] = None,
   ) extends Renderable:
     def render: Text.Modifier =
       div(
@@ -459,13 +459,13 @@ object index extends Target:
             *.href := venueHref,
             "[",
             venueName,
-            "]"
+            "]",
           ),
           " ",
           a(
             *.cls := "font-bold",
             *.href := href,
-            title
+            title,
           ),
           pdfLink match
             case None => ""
@@ -474,22 +474,22 @@ object index extends Target:
                 " ",
                 a(
                   *.href := pdfLink,
-                  "[pdf]"
-                )
+                  "[pdf]",
+                ),
               ),
           badges match
             case None => ""
             case Some(badges) =>
               modifier(
                 " ",
-                badges
-              )
+                badges,
+              ),
         ),
         div(
           *.cls := "ml-8",
           span(
-            people.authorList(authors)
-          )
+            people.authorList(authors),
+          ),
         ),
         readBy match
           case None => modifier()
@@ -497,11 +497,69 @@ object index extends Target:
             div(
               *.cls := "ml-8",
               *.cls := "mt-2",
-              readBy
-            )
+              readBy,
+            ),
       )
 
+  def badgesGen(
+      reproduced: Boolean = false,
+      functional: Boolean = false,
+      available: Boolean = false,
+      reusable: Boolean = false,
+  ): Modifier =
+    tags.span(
+      *.cls := "ml-1",
+      *.cls := "space-x-1",
+      modifier(
+        (List(
+          (
+            reproduced,
+            "/icons/results_reproduced_v1_1.png",
+            "https://www.acm.org/publications/policies/artifact-review-and-badging-current#reproduced",
+          ),
+          (
+            functional,
+            "/icons/artifacts_evaluated_functional_v1_1.png",
+            "https://www.acm.org/publications/policies/artifact-review-and-badging-current#functional",
+          ),
+          (
+            available,
+            "/icons/artifacts_available_v1_1.png",
+            "https://www.acm.org/publications/policies/artifact-review-and-badging-current#available",
+          ),
+          (
+            reusable,
+            "/icons/artifacts_reusable_v1_1.png",
+            "https://www.acm.org/publications/policies/artifact-review-and-badging-current#reusable",
+          ),
+        )
+          .collect:
+            case (true, src, href) => (src, href)
+          .map: (src, href) =>
+            tags.a(
+              *.href := href,
+              img(
+                *.src := src,
+                *.cls := "h-1.5em",
+                *.cls := "inline",
+                *.cls := "align-middle",
+              ),
+            ))*,
+      ),
+    )
+
   val publications: List[Publication] = List(
+    Publication(
+      title = "Listening to the Firehose: Sonifying Z3's Behavior",
+      href =
+        "https://conf.researchr.org/details/icse-2025/icse-2025-nier/1/Listening-to-the-Firehose-Sonifying-Z3-s-Behavior",
+      venueName = "ICSE-NIER'25",
+      venueHref = "https://conf.researchr.org/track/icse-2025/icse-2025-nier",
+      pdfLink = Some("/files/icse25-nier-z3hydrant.pdf"),
+      authors = List(people.fhackett, people.bestchai),
+      badges =
+        Some(badgesGen(available = true, functional = true, reusable = true)),
+    ),
     Publication(
       title = "Going Beyond an Incident Report with TLA+",
       href =
@@ -514,9 +572,9 @@ object index extends Target:
       readBy = Some(
         frag"""❤️ ${a(
             *.href := "https://muratbuffalo.blogspot.com/2023/08/going-beyond-incident-report-with-tla.html",
-            "Commentary blog post"
-          )} by ${people.murat.link}"""
-      )
+            "Commentary blog post",
+          )} by ${people.murat.link}""",
+      ),
     ),
     Publication(
       title = "Compiling Distributed System Models with PGo",
@@ -526,40 +584,21 @@ object index extends Target:
       pdfLink = Some("files/asplosb23main-p12-p-e73de3693c-62943-final.pdf"),
       badges = Some(
         modifier(
-          tags.span(
-            *.cls := "ml-1",
-            *.cls := "space-x-1",
-            modifier(
-              (List(
-                "/icons/results_reproduced_v1_1.png" -> "https://www.acm.org/publications/policies/artifact-review-and-badging-current#reproduced",
-                "/icons/artifacts_evaluated_functional_v1_1.png" -> "https://www.acm.org/publications/policies/artifact-review-and-badging-current#functional",
-                "/icons/artifacts_available_v1_1.png" -> "https://www.acm.org/publications/policies/artifact-review-and-badging-current#available"
-              ).map: (src, href) =>
-                tags.a(
-                  *.href := href,
-                  img(
-                    *.src := src,
-                    *.cls := "h-1.5em",
-                    *.cls := "inline",
-                    *.cls := "align-middle"
-                  )
-                ))*
-            )
-          ),
+          badgesGen(reproduced = true, functional = true, available = true),
           " ",
           span(
             *.cls := "font-[Bangers]",
-            "+ 🏆 Distinguished Artifact!"
-          )
-        )
+            "+ 🏆 Distinguished Artifact!",
+          ),
+        ),
       ),
       authors = List(
         people.fhackett,
         people.shayanh,
         people.renatoCosta,
         people.matthewDo,
-        people.bestchai
-      )
+        people.bestchai,
+      ),
     ),
     Publication(
       title = "Understanding Inconsistency in Azure Cosmos DB with TLA+",
@@ -571,28 +610,17 @@ object index extends Target:
       readBy = Some(
         frag"""❤️ ${a(
             *.href := "https://muratbuffalo.blogspot.com/2024/06/understanding-inconsistency-in-azure.html",
-            "Commentary blog post"
-          )} by ${people.murat.link}"""
-      )
+            "Commentary blog post",
+          )} by ${people.murat.link}""",
+      ),
     ),
     Publication(
       title = "mel- model extractor language for extracting facts from models",
       href = "https://doi.org/10.1145/3365438.3410964",
       venueName = "MODELS'20",
       venueHref = "https://conf.researchr.org/home/models-2020",
-      badges = Some(
-        tags.a(
-          *.cls := "ml-1",
-          *.href := "https://www.acm.org/publications/policies/artifact-review-and-badging-current#functional",
-          img(
-            *.src := "/icons/artifacts_evaluated_functional_v1_1.png",
-            *.cls := "h-1.5em",
-            *.cls := "inline",
-            *.cls := "align-middle"
-          )
-        )
-      ),
+      badges = Some(badgesGen(functional = true)),
       authors =
-        List(people.rhackma, people.jmatlee, people.fhackett, people.migod)
-    )
+        List(people.rhackma, people.jmatlee, people.fhackett, people.migod),
+    ),
   )
