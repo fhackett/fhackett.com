@@ -136,3 +136,11 @@ object people:
   object murat extends Person:
     val name = "Murat Demirbas"
     val href = Some("https://cse.buffalo.edu/~demirbas/")
+
+  object jdavis extends Person:
+    val name = "A. Jesse Jiryu Davis"
+    val href = Some("https://emptysqua.re/blog/")
+
+  object wschultz extends Person:
+    val name = "William Schultz"
+    val href = Some("https://will62794.github.io/")

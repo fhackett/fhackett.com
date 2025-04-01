@@ -86,7 +86,11 @@ object index extends Target:
                 *.cls := "pl-4",
                 *.cls := "list-square",
                 tags.li(frag"""
-                  I'm currently (September-November'24) visiting ${people.stephanMerz.link}, ${people.horatiuCirstea.link}, and the rest of the ${a(
+                  In June-August'25, we're planning a summer internship at MongoDB with ${people.jdavis.link}, ${people.murat.link}, and ${people.wschultz.link},
+                  where I would be working on industrial TLA+ and trace validation.
+                """),
+                tags.li(frag"""
+                  In September-November'24, I visited ${people.stephanMerz.link}, ${people.horatiuCirstea.link}, and the rest of the ${a(
                     *.href := "https://team.inria.fr/veridis/",
                     "VeriDis",
                   )} team at Inria/Loria in Nancy, France.
@@ -254,6 +258,13 @@ object index extends Target:
       )
 
   val talks: List[Talk | InvitedTalk] = List(
+    Talk(
+      title = "Automating Trace Validation with PGo",
+      href = None,
+      venueName = "TLA+Community'25",
+      venueHref = "https://conf.tlapl.us/2025-etaps/",
+      authors = List(people.fhackett, people.bestchai),
+    ),
     InvitedTalk(
       title = "Compiling Distributed System Models with PGo, and Beyond",
       venues = List(
