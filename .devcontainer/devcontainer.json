@@ -9,7 +9,8 @@
 				"scalameta.metals",
 				"github.vscode-github-actions",
 				"scala-lang.scala",
-				"ms-azuretools.vscode-docker"
+				"ms-azuretools.vscode-docker",
+				"GitHub.vscode-pull-request-github"
 			]
 		}
 	},
