@@ -19,15 +19,33 @@ object music_releases extends Target:
         *.cls := "flex-col",
         *.cls := "items-center",
         h2.withStyles(*.cls := "mt-4")(
-          "Music Releases",
+          "Music Releases as Alistair™",
         ),
         p.withStyles(
           *.cls := "max-w-xl",
           *.cls := "text-center",
           *.cls := "mb-0",
         )(
-          "Here is most of the music I've made since I started in high school, around 2010.",
-          " Genres are just a label, but to give you an idea, I'm somehow inspired by dub, techno, ambient music, breakbeats, breakcore, math rock, stuff like that.",
+          """
+            Here is most of the music I've made since I started in high school, around 2010.
+            I went by Alistair the Many until April 2025, when I shortened it.
+          """
+        ),
+        hr(
+          *.cls := "w-xs",
+          *.cls := "border-gray-500",
+          *.cls := "border-dashed",
+          *.cls := "my-4",
+        ),
+        p.withStyles(
+          *.cls := "max-w-xl",
+          *.cls := "text-center",
+          *.cls := "mb-0",
+        )(
+          """
+            Genres are just a label, but to give you an idea, I'm somehow inspired by dub, techno,
+            ambient music, breakbeats, breakcore, math rock, stuff like that.
+          """
         ),
         hr(
           *.cls := "w-sm",
@@ -94,7 +112,7 @@ object music_releases extends Target:
       date = "November'24",
       coverArt = "/album-covers/dreamcatcher.png",
       bandCamp =
-        Some("https://alistairthemany.bandcamp.com/album/dreamcatcher"),
+        Some("https://fhackett.bandcamp.com/album/dreamcatcher"),
       soundCloud = Some("https://soundcloud.com/finnhackett/sets/dreamcatcher"),
       content = frag"""
           On a technical level, much of this album is me trying to better understand cymbals.
@@ -136,7 +154,7 @@ object music_releases extends Target:
       date = "August'24",
       coverArt = "/album-covers/half past never.png",
       bandCamp =
-        Some("https://alistairthemany.bandcamp.com/album/half-past-never"),
+        Some("https://fhackett.bandcamp.com/album/half-past-never"),
       soundCloud =
         Some("https://soundcloud.com/finnhackett/sets/half-past-never"),
       content = frag"""

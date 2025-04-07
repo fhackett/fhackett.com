@@ -77,6 +77,7 @@ def dev(): Unit =
   object state:
     private val changes = mutable.HashSet[os.Path](dirs.public)
     private var lastDebounce: Long = 0
+    private var npmDevProc: Option[os.SubProcess] = None
 
     def witnessChanges(changes: Set[os.Path]): Unit =
       synchronized:
@@ -100,6 +101,23 @@ def dev(): Unit =
             changes.clear()
             println("rebuilding now.")
             build()
+            npmDevProc match
+              case None =>
+                npmDevProc = Some:
+                  os.proc(
+                    "npm",
+                    "run",
+                    "dev",
+                    "--",
+                    "--host",
+                  )
+                    .spawn(
+                      cwd = os.pwd / "prebuild",
+                      destroyOnExit = true,
+                      stdout = os.Inherit,
+                      stderr = os.Inherit,
+                    )
+              case Some(_) => // already running, leave it alone
             true
           else false
       eventLoop(printMsg = printMsgRec)
