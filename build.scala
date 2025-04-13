@@ -79,14 +79,25 @@ def dev(): Unit =
     private var lastDebounce: Long = 0
     private var npmDevProc: Option[os.SubProcess] = None
 
-    def witnessChanges(changes: Set[os.Path]): Unit =
+    def witnessChanges(rawChanges: Set[os.Path]): Unit =
       synchronized:
-        this.changes ++= changes
-        println(s"saw changes:")
-        changes.foreach: path =>
-          println(s"  $path")
-        lastDebounce = System.currentTimeMillis()
-        println("debounced rebuild in >=500ms...")
+        val changes = rawChanges.filter: change =>
+          // watching prebuild would be circular
+          !change.startsWith(os.pwd / "prebuild")
+          // don't watch dotfiles
+          && !os.list(os.pwd)
+            .iterator
+            .filter(_.last.startsWith("."))
+            .exists(change.startsWith)
+
+        if changes.nonEmpty
+        then
+          this.changes ++= changes
+          println(s"saw changes:")
+          changes.foreach: path =>
+            println(s"  $path")
+          lastDebounce = System.currentTimeMillis()
+          println("debounced rebuild in >=500ms...")
 
     @tailrec
     def eventLoop(printMsg: Boolean): Unit =
@@ -100,31 +111,46 @@ def dev(): Unit =
           then
             changes.clear()
             println("rebuilding now.")
-            build()
-            npmDevProc match
-              case None =>
-                npmDevProc = Some:
-                  os.proc(
-                    "npm",
-                    "run",
-                    "dev",
-                    "--",
-                    "--host",
-                  )
-                    .spawn(
-                      cwd = os.pwd / "prebuild",
-                      destroyOnExit = true,
-                      stdout = os.Inherit,
-                      stderr = os.Inherit,
+            val buildResult = os.proc(
+              "scala-cli",
+              "run",
+              ".",
+              "--main-class",
+              "site.build",
+            ).call(
+              cwd = os.pwd,
+              stdin = os.Inherit,
+              stdout = os.Inherit,
+              stderr = os.Inherit,
+              check = false
+            )
+            if buildResult.exitCode != 0
+            then println(s"build failed with code ${buildResult.exitCode}")
+            else
+              npmDevProc match
+                case None =>
+                  npmDevProc = Some:
+                    os.proc(
+                      "npm",
+                      "run",
+                      "dev",
+                      "--",
+                      "--host",
                     )
-              case Some(_) => // already running, leave it alone
+                      .spawn(
+                        cwd = os.pwd / "prebuild",
+                        destroyOnExit = true,
+                        stdout = os.Inherit,
+                        stderr = os.Inherit,
+                      )
+                case Some(_) => // already running, leave it alone
             true
           else false
       eventLoop(printMsg = printMsgRec)
 
   Using.resource(
     os.watch.watch(
-      Seq(dirs.public),
+      Seq(os.pwd),
       state.witnessChanges,
     ),
   ): _ =>
