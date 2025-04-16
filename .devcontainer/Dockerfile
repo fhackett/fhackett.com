@@ -12,6 +12,8 @@ RUN groupmod --gid $USER_GID $USERNAME \
 RUN apt-get update \
     && apt-get install -y openjdk-21-jdk openjdk-21-source git build-essential curl zip
 
+ENV EDITOR code --wait
+
 USER $USERNAME
 
 RUN mkdir -p /home/$USERNAME \
