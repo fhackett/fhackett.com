@@ -1,6 +1,5 @@
 import './fonts.css'
-import '@unocss/reset/normalize.css'
-import 'uno.css'
+import './main.css'
 
 (() => {
   const navbarOpen = document.getElementById("navbar-open")
@@ -10,7 +9,9 @@ import 'uno.css'
 
   const toggleElements = () => {
     navbarOpen.classList.toggle("hidden");
+    navbarOpen.classList.toggle("inline");
     navbarClose.classList.toggle("hidden");
+    navbarClose.classList.toggle("inline");
     Array.from(navbarItems).forEach(element => {
       element.classList.toggle("hidden");
     });
@@ -41,7 +42,9 @@ Array.from(document.getElementsByClassName("show-more-container")).forEach(music
 
   const toggleShow = () => {
     showLess.classList.toggle("hidden")
+    showLess.classList.toggle("block")
     showMore.classList.toggle("hidden")
+    showLess.classList.toggle("block")
     content.classList.toggle(heightCls)
     content.classList.toggle("overflow-y-hidden")
   }
@@ -56,10 +59,12 @@ Array.from(document.getElementsByClassName("show-more-container")).forEach(music
     if(content.scrollHeight > 200) {
       if(isUnset()) {
         showMore.classList.remove("hidden")
+        showMore.classList.add("block")
       }
     } else {
       if(isHiding()) {
         showMore.classList.add("hidden")
+        showMore.classList.remote("block")
       }
     }
   }

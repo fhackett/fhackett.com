@@ -15,7 +15,8 @@ object `404` extends Target:
         *.cls := "flex",
         *.cls := "flex-col",
         *.cls := "items-center",
-        h2.withStyles(*.cls := "mt-4")(
+        h2(
+          *.cls := "mt-4",
           "[Not Found]",
         ),
         p(

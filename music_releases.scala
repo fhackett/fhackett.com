@@ -18,36 +18,35 @@ object music_releases extends Target:
         *.cls := "flex",
         *.cls := "flex-col",
         *.cls := "items-center",
-        h2.withStyles(*.cls := "mt-4")(
+        h2(
+          *.cls := "mt-4",
           "Music Releases as Alistair™",
         ),
-        p.withStyles(
+        p(
           *.cls := "max-w-xl",
           *.cls := "text-center",
           *.cls := "mb-0",
-        )(
           """
             Here is most of the music I've made since I started in high school, around 2010.
             I went by Alistair the Many until April 2025, when I shortened it.
-          """
+          """,
         ),
-        hr(
+        tags.hr(
           *.cls := "w-xs",
           *.cls := "border-gray-500",
           *.cls := "border-dashed",
           *.cls := "my-4",
         ),
-        p.withStyles(
+        p(
           *.cls := "max-w-xl",
           *.cls := "text-center",
           *.cls := "mb-0",
-        )(
           """
             Genres are just a label, but to give you an idea, I'm somehow inspired by dub, techno,
             ambient music, breakbeats, breakcore, math rock, stuff like that.
-          """
+          """,
         ),
-        hr(
+        tags.hr(
           *.cls := "w-sm",
           *.cls := "border-gray-500",
           *.cls := "border-solid",
@@ -74,7 +73,7 @@ object music_releases extends Target:
       ul(
         *.cls := "mt-1",
         *.cls := "pl-4",
-        *.cls := "list-square",
+        *.cls := "list-[square]",
         content,
       ),
     )
@@ -111,8 +110,7 @@ object music_releases extends Target:
       name = "dreamcatcher",
       date = "November'24",
       coverArt = "/album-covers/dreamcatcher.png",
-      bandCamp =
-        Some("https://fhackett.bandcamp.com/album/dreamcatcher"),
+      bandCamp = Some("https://fhackett.bandcamp.com/album/dreamcatcher"),
       soundCloud = Some("https://soundcloud.com/finnhackett/sets/dreamcatcher"),
       content = frag"""
           On a technical level, much of this album is me trying to better understand cymbals.
@@ -153,8 +151,7 @@ object music_releases extends Target:
       name = "half past never",
       date = "August'24",
       coverArt = "/album-covers/half past never.png",
-      bandCamp =
-        Some("https://fhackett.bandcamp.com/album/half-past-never"),
+      bandCamp = Some("https://fhackett.bandcamp.com/album/half-past-never"),
       soundCloud =
         Some("https://soundcloud.com/finnhackett/sets/half-past-never"),
       content = frag"""
@@ -506,7 +503,7 @@ object music_releases extends Target:
           name,
           span(
             *.cls := "ml-3",
-            *.cls := "color-gray-500",
+            *.cls := "text-gray-500",
             *.cls := "text-base",
             *.cls := "font-normal",
             *.cls := "italic",
@@ -523,7 +520,7 @@ object music_releases extends Target:
                 *.href := bandCamp,
                 img(
                   *.src := "/icons/bandcamp-logotype-color-128.png",
-                  *.cls := "h-1em",
+                  *.cls := "h-[1em]",
                   *.cls := "inline",
                   *.cls := "align-middle",
                 ),
@@ -536,7 +533,7 @@ object music_releases extends Target:
                 *.href := soundCloud,
                 img(
                   *.src := "/icons/54546-1717072325-sc-logo-cloud-black-7412d7.svg",
-                  *.cls := "h-1em",
+                  *.cls := "h-[1em]",
                   *.cls := "inline",
                 ),
               ),
@@ -544,13 +541,13 @@ object music_releases extends Target:
         div(
           *.cls := "music-release",
           *.cls := "grid",
-          *.cls := "grid-cols-[minmax(0px,1fr)2fr]",
+          *.cls := "grid-cols-[minmax(0px,1fr)_2fr]",
           *.cls := "gap-3",
           img(
             *.cls := "w-full",
             *.src := coverArt,
           ),
-          showMore("max-h-200px")(
+          showMore("max-h-[200px]")(
             content,
           ),
         ),

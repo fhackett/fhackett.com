@@ -13,16 +13,7 @@ object customtags:
   object noStyles extends Text.Modifier:
     def applyTo(t: Builder): Unit = ()
 
-  export Text.short.{
-    a as _,
-    p as _,
-    hr as _,
-    h2 as _,
-    h3 as _,
-    li as _,
-    span as _,
-    *,
-  }
+  export Text.short.{a as _, p as _, hr as _, h2 as _, h3 as _, li as _, *}
 
   trait CustomTag:
     def tag: Text.Tag
@@ -30,30 +21,6 @@ object customtags:
 
     def apply(mods: Text.Modifier*): Text.Modifier =
       tag(styles, mods)
-
-  trait WithInnerSpan:
-    self =>
-    def tag: Text.Tag
-    def styles: Text.Modifier
-    def spanStyles: Text.Modifier
-
-    def withStyles(mods: Text.Modifier*): WithInnerSpan =
-      new WithInnerSpan:
-        export self.{tag, spanStyles}
-        val styles = modifier(self.styles, mods)
-
-    def apply(mods: Text.Modifier*): Text.Modifier =
-      tag(
-        styles,
-        tags.span(
-          spanStyles,
-          mods,
-        ),
-      )
-
-  trait WithInnerWhiteBgSpan extends WithInnerSpan:
-    def spanStyles: Text.Modifier =
-      *.cls := "bg-white"
 
   object a extends CustomTag:
     val tag = tags.a
@@ -64,25 +31,35 @@ object customtags:
       *.cls := "bg-white",
     )
 
-  object p extends WithInnerWhiteBgSpan:
+  object p extends CustomTag:
     val tag = tags.p
     val styles =
-      *.cls := "mt-0"
+      modifier(
+        *.cls := "mt-0",
+        *.cls := "mb-1",
+      )
 
-  object h2 extends WithInnerWhiteBgSpan:
+  object h2 extends CustomTag:
     val tag = tags.h2
     val styles =
-      *.cls := "mt-0"
+      modifier(
+        *.cls := "mt-0",
+        *.cls := "mb-2",
+        *.cls := "text-xl",
+        *.cls := "font-bold",
+      )
 
-  object h3 extends WithInnerWhiteBgSpan:
+  object h3 extends CustomTag:
     val tag = tags.h3
     val styles =
       modifier(
         *.cls := "mt-0",
         *.cls := "mb-2",
+        *.cls := "text-l",
+        *.cls := "font-bold",
       )
 
-  object li extends WithInnerWhiteBgSpan:
+  object li extends CustomTag:
     val tag = tags.li
     val styles = noStyles
 
@@ -90,13 +67,8 @@ object customtags:
     val tag = tags.hr
     val styles = List(
       *.cls := "border-solid-1",
-      *.cls := "border-gray-50",
+      *.cls := "border-[gray]",
     )
-
-  object span extends CustomTag:
-    val tag = tags.span
-    val styles =
-      *.cls := "bg-white"
 
 import customtags.*
 
@@ -115,80 +87,79 @@ def wrapHeader(content: Frag): geny.Writable =
       *.cls := "bg-[url(/nav-mid.svg)]",
       *.cls := "bg-cover",
       *.cls := "bg-white",
-      *.cls := "border-b-solid",
-      *.cls := "border-1",
-      *.cls := "border-rd-md",
-      *.cls := "flex",
-      *.cls := "flex-col",
-      *.cls := "md:flex-row",
-      tags.span(
-        *.cls := "text-xl",
-        *.cls := "flex-inline",
-        *.cls := "flex-row",
-        tags.a(
+      *.cls := "border-solid",
+      *.cls := "border-b",
+      *.cls := "rounded-md",
+      *.cls := "grid",
+      *.cls := "grid-flow-col",
+      *.cls := "items-center",
+      *.cls := "text-xl",
+      tags.a(
+        *.cls := "p-2",
+        *.cls := "color-black",
+        *.cls := "font-bold",
+        *.cls := "no-underline",
+        *.href := "/",
+        span(
+          *.cls := "bg-white",
+          "Finn Hackett",
+          sub("(he/they)"),
+          ", MMath",
+        ),
+      ),
+      a(
+        *.cls := "md:hidden",
+        *.cls := "no-underline",
+        *.cls := "color-black",
+        *.cls := "col-start-2",
+        *.cls := "justify-self-end",
+        img(
+          *.cls := "h-[1.5em]",
           *.cls := "p-2",
-          *.cls := "color-black",
-          *.cls := "font-bold",
-          *.cls := "no-underline",
-          *.href := "/",
-          span(
-            *.cls := "bg-white",
-            "Finn Hackett",
-            sub("(he/they)"),
-            ", MMath",
-          ),
+          *.cls := "inline",
+          *.id := "navbar-open",
+          *.src := "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M3 18h18v-2H3zm0-5h18v-2H3zm0-7v2h18V6z'/%3E%3C/svg%3E",
         ),
-        tags.span(
-          *.cls := "flex-grow",
-        ),
-        a(
-          *.cls := "md:hidden",
-          *.cls := "no-underline",
-          *.cls := "color-black",
-          img(
-            *.cls := "h-1.5em",
-            *.cls := "p-2",
-            *.cls := "inline",
-            *.id := "navbar-open",
-            *.src := "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M3 18h18v-2H3zm0-5h18v-2H3zm0-7v2h18V6z'/%3E%3C/svg%3E",
-          ),
-          img(
-            *.cls := "h-1.5em",
-            *.cls := "p-2",
-            *.cls := "inline",
-            *.cls := "hidden",
-            *.id := "navbar-close",
-            *.src := "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 20 20'%3E%3Cpath fill='black' d='M2.93 17.07A10 10 0 1 1 17.07 2.93A10 10 0 0 1 2.93 17.07m1.41-1.41A8 8 0 1 0 15.66 4.34A8 8 0 0 0 4.34 15.66m9.9-8.49L11.41 10l2.83 2.83l-1.41 1.41L10 11.41l-2.83 2.83l-1.41-1.41L8.59 10L5.76 7.17l1.41-1.41L10 8.59l2.83-2.83z'/%3E%3C/svg%3E",
-          ),
+        img(
+          *.cls := "h-[1.5em]",
+          *.cls := "p-2",
+          *.cls := "hidden",
+          *.id := "navbar-close",
+          *.src := "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 20 20'%3E%3Cpath fill='black' d='M2.93 17.07A10 10 0 1 1 17.07 2.93A10 10 0 0 1 2.93 17.07m1.41-1.41A8 8 0 1 0 15.66 4.34A8 8 0 0 0 4.34 15.66m9.9-8.49L11.41 10l2.83 2.83l-1.41 1.41L10 11.41l-2.83 2.83l-1.41-1.41L8.59 10L5.76 7.17l1.41-1.41L10 8.59l2.83-2.83z'/%3E%3C/svg%3E",
         ),
       ),
-      tags.span(
-        *.cls := "hidden",
-        *.cls := "md:flex-grow",
-        *.cls := "md:inline",
-      ),
-      modifier(
-        (Seq(
-          ("Intro", index.href),
-          ("Research Projects", research_projects.href),
-          ("Music Releases", music_releases.href),
-        ).map: (name, href) =>
-          tags.a(
-            *.cls := "p-2",
-            *.cls := "text-xl",
-            *.cls := "font-bold",
-            *.cls := "color-black",
-            *.cls := "underline",
-            *.cls := "hover:no-underline",
-            *.cls := "navbar-item",
-            *.cls := "hidden",
-            *.cls := "md:block",
-            *.href := href,
-            span(
-              *.cls := "bg-white",
-              name,
-            ),
-          ))*,
+      span(
+        *.cls := "col-start-1",
+        *.cls := "row-start-2",
+        *.cls := "md:col-start-2",
+        *.cls := "md:row-start-1",
+        *.cls := "md:justify-self-end",
+        *.cls := "justify-self-start",
+        *.cls := "flex",
+        *.cls := "flex-col",
+        *.cls := "md:flex-row",
+        modifier(
+          (Seq(
+            ("Intro", index.href),
+            ("Music Releases", music_releases.href),
+          ).map: (name, href) =>
+            tags.a(
+              *.cls := "p-2",
+              *.cls := "text-xl",
+              *.cls := "font-bold",
+              *.cls := "color-black",
+              *.cls := "underline",
+              *.cls := "hover:no-underline",
+              *.cls := "navbar-item",
+              *.cls := "hidden",
+              *.cls := "md:inline-block",
+              *.href := href,
+              span(
+                *.cls := "bg-white",
+                name,
+              ),
+            ))*,
+        ),
       ),
     )
 

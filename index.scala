@@ -38,7 +38,7 @@ object index extends Target:
         *.cls := "container",
         *.cls := "mx-auto",
         *.cls := "divide-y",
-        *.cls := "divide-gray",
+        *.cls := "border-[gray]",
         *.cls := "divide-solid",
         // ---
         tags2.section(
@@ -46,7 +46,7 @@ object index extends Target:
           *.cls := "border-x-0",
           // single col version
           *.cls := "divide-y",
-          *.cls := "divide-gray",
+          *.cls := "border-[gray]",
           *.cls := "divide-solid",
           // 2 col version
           *.cls := "lg:columns-2",
@@ -56,8 +56,8 @@ object index extends Target:
           tags2.section(
             *.cls := "lg:pr-2",
             *.cls := "lg:border-r-2",
-            *.cls := "lg:border-r-gray",
-            *.cls := "lg:border-r-double",
+            *.cls := "lg:border-[gray]",
+            *.cls := "lg:border-double",
             h2("Self-Introduction 📖"),
             frag"""
               I'm a PhD student in the ${a(
@@ -84,7 +84,7 @@ object index extends Target:
               ${ul(
                 *.cls := "mt-1",
                 *.cls := "pl-4",
-                *.cls := "list-square",
+                *.cls := "list-[square]",
                 tags.li(frag"""
                   In June-August'25, we're planning a summer internship at MongoDB with ${people.jdavis.link}, ${people.murat.link}, and ${people.wschultz.link},
                   where I would be working on industrial TLA+ and trace validation.
@@ -126,7 +126,7 @@ object index extends Target:
           ),
           div(
             *.cls := "divide-y",
-            *.cls := "divide-gray",
+            *.cls := "border-[gray]",
             *.cls := "divide-solid",
             *.cls := "border-x-0",
             tags2.section(
@@ -137,8 +137,8 @@ object index extends Target:
               h2("Contact 📡"),
               div(
                 *.cls := "inline-grid",
-                *.cls := "grid-cols-[repeat(3,min-content)auto]",
-                *.cls := "gap-3",
+                *.cls := "grid-cols-[repeat(3,min-content)_auto]",
+                *.cls := "gap-x-3",
                 *.cls := "mb-4",
                 // row 1
                 span("E-Mail"),
@@ -180,8 +180,8 @@ object index extends Target:
                 *.cls := "mb-4",
                 *.cls := "p-0",
                 *.cls := "inline-grid",
-                *.cls := "grid-cols-[repeat(1,min-content)auto]",
-                *.cls := "gap-3",
+                *.cls := "grid-cols-[min-content_auto]",
+                *.cls := "gap-x-3",
                 tags.span("🏫"),
                 li(
                   "PhD, University of British Columbia, 2020-current. Supervised by ",
@@ -209,22 +209,20 @@ object index extends Target:
                 *.cls := "mb-4",
                 *.cls := "p-0",
                 *.cls := "inline-grid",
-                *.cls := "grid-cols-[repeat(1,min-content)auto]",
-                *.cls := "gap-3",
-                tags.span("⭐"),
-                li("MongoDB PhD Fellowship (2024-2025)."),
-                tags.span("⭐"),
-                li("Student Community Building Award (2023)."),
-                tags.span("⭐"),
-                li("Graduate Teaching Assistant Award (2022)."),
-                tags.span("⭐"),
-                li("MITACS Accelerate (2019 - 2020)."),
-                tags.span("⭐"),
-                li(
+                *.cls := "grid-cols-[min-content_auto]",
+                *.cls := "gap-x-3",
+                List(
+                  "MongoDB PhD Fellowship (2024-2025).",
+                  "Student Community Building Award (2023).",
+                  "Graduate Teaching Assistant Award (2022).",
+                  "MITACS Accelerate (2019 - 2020).",
                   "Martin Frauendorf Memorial Prize in Computer Science (2018).",
-                ),
-                tags.span("⭐"),
-                li("International Leader of Tomorrow (2013-2018)."),
+                  "International Leader of Tomorrow (2013-2018).",
+                ).map: award =>
+                  modifier(
+                    tags.span("⭐"),
+                    li(award),
+                  ),
               ),
             ),
           ),
@@ -363,7 +361,6 @@ object index extends Target:
       div(
         *.cls := "mb-3",
         div(
-          *.cls := "mb-2",
           span("Invited talk:"),
           " ",
           span(
@@ -422,7 +419,6 @@ object index extends Target:
       div(
         *.cls := "mb-3",
         div(
-          *.cls := "mb-2",
           a(
             *.href := venueHref,
             "[",
@@ -465,7 +461,6 @@ object index extends Target:
       div(
         *.cls := "mb-3",
         div(
-          *.cls := "mb-2",
           a(
             *.href := venueHref,
             "[",
@@ -507,7 +502,6 @@ object index extends Target:
           case Some(readBy) =>
             div(
               *.cls := "ml-8",
-              *.cls := "mt-2",
               readBy,
             ),
       )
@@ -551,7 +545,7 @@ object index extends Target:
               *.href := href,
               img(
                 *.src := src,
-                *.cls := "h-1.5em",
+                *.cls := "h-[1.5em]",
                 *.cls := "inline",
                 *.cls := "align-middle",
               ),

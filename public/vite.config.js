@@ -1,15 +1,14 @@
-import UnoCSS from 'unocss/vite'
+import tailwindcss from '@tailwindcss/vite'
 
 export default {
   plugins: [
-    UnoCSS(),
+    tailwindcss(),
   ],
   publicDir: "files",
   build: {
     rollupOptions: {
       input: {
         index: 'index.html',
-        research_projects: 'research_projects.html',
         music_releases: 'music_releases.html',
         404: '404.html',
       },

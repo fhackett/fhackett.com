@@ -19,7 +19,6 @@ def build(): Unit =
   val targets: List[Target] = List(
     index,
     music_releases,
-    research_projects,
     `404`,
   )
 
@@ -85,10 +84,11 @@ def dev(): Unit =
           // watching prebuild would be circular
           !change.startsWith(os.pwd / "prebuild")
           // don't watch dotfiles
-          && !os.list(os.pwd)
-            .iterator
-            .filter(_.last.startsWith("."))
-            .exists(change.startsWith)
+            && !os
+              .list(os.pwd)
+              .iterator
+              .filter(_.last.startsWith("."))
+              .exists(change.startsWith)
 
         if changes.nonEmpty
         then
@@ -111,19 +111,21 @@ def dev(): Unit =
           then
             changes.clear()
             println("rebuilding now.")
-            val buildResult = os.proc(
-              "scala-cli",
-              "run",
-              ".",
-              "--main-class",
-              "site.build",
-            ).call(
-              cwd = os.pwd,
-              stdin = os.Inherit,
-              stdout = os.Inherit,
-              stderr = os.Inherit,
-              check = false
-            )
+            val buildResult = os
+              .proc(
+                "scala-cli",
+                "run",
+                ".",
+                "--main-class",
+                "site.build",
+              )
+              .call(
+                cwd = os.pwd,
+                stdin = os.Inherit,
+                stdout = os.Inherit,
+                stderr = os.Inherit,
+                check = false,
+              )
             if buildResult.exitCode != 0
             then println(s"build failed with code ${buildResult.exitCode}")
             else
@@ -136,13 +138,12 @@ def dev(): Unit =
                       "dev",
                       "--",
                       "--host",
+                    ).spawn(
+                      cwd = os.pwd / "prebuild",
+                      destroyOnExit = true,
+                      stdout = os.Inherit,
+                      stderr = os.Inherit,
                     )
-                      .spawn(
-                        cwd = os.pwd / "prebuild",
-                        destroyOnExit = true,
-                        stdout = os.Inherit,
-                        stderr = os.Inherit,
-                      )
                 case Some(_) => // already running, leave it alone
             true
           else false
