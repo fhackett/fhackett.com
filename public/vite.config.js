@@ -1,4 +1,5 @@
 import tailwindcss from '@tailwindcss/vite'
+import { globSync } from 'glob'
 
 export default {
   plugins: [
@@ -7,11 +8,13 @@ export default {
   publicDir: "files",
   build: {
     rollupOptions: {
-      input: {
-        index: 'index.html',
-        music_releases: 'music_releases.html',
-        404: '404.html',
-      },
+      input: Object.fromEntries(
+        globSync('**/*.html').map(file => {
+          return [
+            file,
+            file.slice(0, file.length - 5),
+          ]
+        }))
     },
   },
 }

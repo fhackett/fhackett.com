@@ -1,6 +1,3 @@
-import './fonts.css'
-import './main.css'
-
 (() => {
   const navbarOpen = document.getElementById("navbar-open")
   const navbarClose = document.getElementById("navbar-close")

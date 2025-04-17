@@ -20,6 +20,7 @@ def build(): Unit =
     index,
     music_releases,
     `404`,
+    presentations.icse_nier_25,
   )
 
   val publicFiles =
@@ -65,11 +66,13 @@ def build(): Unit =
         createFolders = true,
       )
 
-  os.proc("npm", "install").call(cwd = dirs.prebuild)
-
   targets.foreach: target =>
     println(s"regenerating ${dirs.prebuild / target.path}")
-    os.write.over(dirs.prebuild / target.path, target.content)
+    os.write.over(
+      dirs.prebuild / target.path,
+      target.content,
+      createFolders = true,
+    )
 
 @main
 def dev(): Unit =
@@ -78,18 +81,8 @@ def dev(): Unit =
     private var lastDebounce: Long = 0
     private var npmDevProc: Option[os.SubProcess] = None
 
-    def witnessChanges(rawChanges: Set[os.Path]): Unit =
+    def witnessChanges(changes: Set[os.Path]): Unit =
       synchronized:
-        val changes = rawChanges.filter: change =>
-          // watching prebuild would be circular
-          !change.startsWith(os.pwd / "prebuild")
-          // don't watch dotfiles
-            && !os
-              .list(os.pwd)
-              .iterator
-              .filter(_.last.startsWith("."))
-              .exists(change.startsWith)
-
         if changes.nonEmpty
         then
           this.changes ++= changes
@@ -104,7 +97,10 @@ def dev(): Unit =
       val printMsgRec =
         synchronized:
           if printMsg
-          then println(s"watching for changes in ${dirs.public}, Ctrl^C to end")
+          then
+            println(
+              s"watching for changes in ${os.pwd} (but not ${os.pwd / "prebuild"}), Ctrl^C to end",
+            )
           wait(500)
           if changes.nonEmpty && System
               .currentTimeMillis() - lastDebounce >= 500
@@ -131,6 +127,15 @@ def dev(): Unit =
             else
               npmDevProc match
                 case None =>
+                  println("npm install")
+                  os.proc("npm", "install")
+                    .call(
+                      cwd = dirs.prebuild,
+                      stdin = os.Inherit,
+                      stdout = os.Inherit,
+                      stderr = os.Inherit,
+                    )
+                  println("launching vite")
                   npmDevProc = Some:
                     os.proc(
                       "npm",
@@ -151,7 +156,10 @@ def dev(): Unit =
 
   Using.resource(
     os.watch.watch(
-      Seq(os.pwd),
+      Seq(
+        dirs.public,
+        os.pwd / "site",
+      ),
       state.witnessChanges,
     ),
   ): _ =>

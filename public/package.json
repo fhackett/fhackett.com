@@ -4,7 +4,8 @@
   "type": "module",
   "dependencies": {
     "@tailwindcss/vite": "^4.1.4",
-    "tailwindcss": "^4.1.4"
+    "tailwindcss": "^4.1.4",
+    "glob": "^11.0.1"
   },
   "scripts": {
     "dev": "vite",

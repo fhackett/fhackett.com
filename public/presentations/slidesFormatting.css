@@ -1,0 +1,32 @@
+@media print {
+    body > nav {
+        display: none;
+    }
+    body > footer {
+        display: none;
+    }
+
+    .slideshow-root {
+        height: auto; /* if you don't set this everything goes horribly wrong! */
+    }
+
+    .slideshow-slide {
+        break-after: always;
+        position: relative;
+        outline-style: none;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 1920px;
+        height: 1080px;
+    }
+
+    body > span.flex-grow {
+        display: none;
+    }
+}
+
+@page {
+    size: 1920px 1080px;
+    margin: 0;
+}

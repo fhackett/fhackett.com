@@ -173,7 +173,9 @@ def wrapHeader(content: Frag): geny.Writable =
           *.content := "width=device-width, initial-scale=1",
         ),
         link(*.rel := "icon", *.href := "/favicon.svg"),
-        script(*.`type` := "module", *.src := "./main.js"),
+        script(*.`type` := "module", *.src := "/main.js"),
+        link(*.rel := "stylesheet", *.href := "/main.css"),
+        link(*.rel := "stylesheet", *.href := "/fonts.css"),
         tags2.title("Finn Hackett"),
       ),
       body(
@@ -204,6 +206,18 @@ def wrapHeader(content: Frag): geny.Writable =
           ),
         ),
       ),
+    )
+
+extension (ctx: StringContext)
+  def txt(mods: Text.Modifier*): Text.Modifier =
+    StringContext.checkLengths(mods, ctx.parts)
+    modifier(
+      ctx.parts.head,
+      ctx.parts.view.tail
+        .zip(mods)
+        .flatMap: (part, mod) =>
+          List[Text.Modifier](mod, part)
+        .toSeq,
     )
 
 extension (ctx: StringContext)
