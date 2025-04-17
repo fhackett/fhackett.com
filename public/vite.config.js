@@ -11,8 +11,8 @@ export default {
       input: Object.fromEntries(
         globSync('**/*.html').map(file => {
           return [
-            file,
             file.slice(0, file.length - 5),
+            file,
           ]
         }))
     },
