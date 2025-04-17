@@ -26,16 +26,18 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup scala-cli
         uses: VirtusLab/scala-cli-setup@main
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
       - name: Scala build
-        run: scala-cli run . --main-class site.build
+        run: scala-cli run . --main-class site.build -- true
         working-directory: ${{ env.BUILD_PATH }}
       - name: JS build
-        run: cd prebuild && bun run build
+        run: cd prebuild && npm run build
         working-directory: ${{ env.BUILD_PATH }}
       - name: Deploy
-        run: bunx wrangler pages deploy ${{ env.BUILD_PATH }}/prebuild/dist --project-name=fhackett --branch=${{ github.ref_name }}
+        run: npx wrangler pages deploy ${{ env.BUILD_PATH }}/prebuild/dist --project-name=fhackett --branch=${{ github.ref_name }}
         env:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

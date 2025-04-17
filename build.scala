@@ -14,8 +14,18 @@ object dirs:
   val public = os.pwd / "public"
   val prebuild = os.pwd / "prebuild"
 
+private def doNpmInstall(): Unit =
+  println("npm install")
+  os.proc("npm", "install")
+    .call(
+      cwd = dirs.prebuild,
+      stdin = os.Inherit,
+      stdout = os.Inherit,
+      stderr = os.Inherit,
+    )
+
 @main
-def build(): Unit =
+def build(npmInstall: Boolean): Unit =
   val targets: List[Target] = List(
     index,
     music_releases,
@@ -74,6 +84,10 @@ def build(): Unit =
       createFolders = true,
     )
 
+  if npmInstall
+  then doNpmInstall()
+end build
+
 @main
 def dev(): Unit =
   object state:
@@ -114,6 +128,8 @@ def dev(): Unit =
                 ".",
                 "--main-class",
                 "site.build",
+                "--",
+                "false",
               )
               .call(
                 cwd = os.pwd,
@@ -127,14 +143,7 @@ def dev(): Unit =
             else
               npmDevProc match
                 case None =>
-                  println("npm install")
-                  os.proc("npm", "install")
-                    .call(
-                      cwd = dirs.prebuild,
-                      stdin = os.Inherit,
-                      stdout = os.Inherit,
-                      stderr = os.Inherit,
-                    )
+                  doNpmInstall()
                   println("launching vite")
                   npmDevProc = Some:
                     os.proc(
