@@ -30,8 +30,7 @@ def build(npmInstall: Boolean): Unit =
     index,
     music_releases,
     `404`,
-    presentations.icse_nier_25,
-  )
+  ) ::: presentations.all
 
   val publicFiles =
     os.walk(dirs.public)

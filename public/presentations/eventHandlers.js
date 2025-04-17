@@ -61,24 +61,32 @@ import './slidesFormatting.css'
 
     root.addEventListener('keydown', event => {
       switch(event.key) {
-        case 'f':
+        case "f":
           if(!Document.fullscreenElement) {
             root.requestFullscreen().catch(err => {
-              window.alert(`failed to get fullscreen ${err}`)
+              window.alert(`failed to get fullscreen: ${err}`)
             })
           }
         break;
-        case 'ArrowRight':
+        case "ArrowRight":
           if(slideIdx < slides.length - 1) {
             slideIdx += 1
             showCurrentSlide()
           }
         break;
-        case 'ArrowLeft':
+        case "ArrowLeft":
           if(slideIdx > 0){
             slideIdx -= 1
             showCurrentSlide()
           }
+        break;
+        case "Home":
+          slideIdx = 0
+          showCurrentSlide()
+        break;
+        case "End":
+          slideIdx = slides.length > 0 ? slides.length - 1 : 0
+          showCurrentSlide()
         break;
       }
     })
