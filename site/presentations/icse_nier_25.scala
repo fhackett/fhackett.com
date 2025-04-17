@@ -280,8 +280,8 @@ object icse_nier_25 extends Presentation:
             *.cls := "pl-[1em]",
             *.cls := "list-outside",
             *.cls := "list-[square]",
-            li("Can compress 100mb of logs into a 1min listen"),
-            li("Retains identifiable structural features of underlying process"),
+            li("Can compress 100mb of logs into a 1min listen."),
+            li("Retains identifiable structural features of underlying process."),
           ),
           h3(
             *.cls := "pt-[1em]",
@@ -294,13 +294,11 @@ object icse_nier_25 extends Presentation:
             *.cls := "pl-[1em]",
             *.cls := "list-outside",
             *.cls := "list-[square]",
-            li("Consider using more log parameters"),
+            li("Consider more log parameters, and/or Fourier synthesis."),
             li(
-              "Explore Fourier synthesis instead of direct waveform generation",
+              "Use Z3Hydrant as coarse-grained initial \"view\" to complement more precise analyses.",
             ),
-            li(
-              "Use Z3Hydrant as coarse-grained initial \"view\" to complement more precise analyses",
-            ),
+            li("Apply technique to other domains with similar logs."),
           ),
         ),
         div(
