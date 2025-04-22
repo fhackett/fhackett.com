@@ -7,6 +7,7 @@ import scalatags.Text.tags2
 
 val all: List[Presentation] = List(
   icse_nier_25,
+  tla_community_event_25,
 )
 
 trait Presentation extends Target:

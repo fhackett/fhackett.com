@@ -175,6 +175,18 @@ object icse_nier_25 extends Presentation:
       ),
     ),
     ContentSlide(
+      titlePart = titleH("Potential Use Case"),
+      bodyPart = modifier(
+        *.cls := "grid",
+        *.cls := "justify-items-center",
+        img(
+          *.src := "icse_nier_25/intended_use_case.svg",
+          *.cls := "w-[75%]",
+          *.cls := "pt-[3em]",
+        ),
+      ),
+    ),
+    ContentSlide(
       titlePart = titleH("Initial Observations"),
       bodyPart = modifier(
         *.cls := "pl-[1.5em]",
