@@ -293,7 +293,9 @@ object icse_nier_25 extends Presentation:
             *.cls := "list-outside",
             *.cls := "list-[square]",
             li("Can compress 100mb of logs into a 1min listen."),
-            li("Retains identifiable structural features of underlying process."),
+            li(
+              "Retains identifiable structural features of underlying process.",
+            ),
           ),
           h3(
             *.cls := "pt-[1em]",

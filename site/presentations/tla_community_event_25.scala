@@ -7,7 +7,7 @@ import scalatags.Text.tags2
 
 object tla_community_event_25 extends Presentation:
   def path = os.sub / "presentations" / "tla_community_event_25.html"
-  
+
   def titleH(mods: Modifier*): Modifier =
     h2(
       *.cls := "text-[2.5em]",
@@ -17,12 +17,11 @@ object tla_community_event_25 extends Presentation:
 
   def slides: List[Slide] = List(
     TitleSlide(
-      titlePart = h1("Automating Trace Validation with PGo")
+      titlePart = h1("Automating Trace Validation with PGo"),
     ),
     ContentSlide(
       titlePart = titleH("Speaker Intro"),
       bodyPart = modifier(
-
       ),
     ),
     TitleSlide(
@@ -35,14 +34,14 @@ object tla_community_event_25 extends Presentation:
         div(
           *.cls := "text-center",
           titleH(
-            "Building and Running Distributed Systems is Notoriously Error-prone"
+            "Building and Running Distributed Systems is Notoriously Error-prone",
           ),
           div(
             *.cls := "pt-[.5em]",
             *.cls := "text-[1.6em]",
             *.cls := "text-gray-600",
             "👉 TLA+ helps with this",
-          )
+          ),
         ),
         ul(
           *.cls := "flex",
@@ -63,11 +62,11 @@ object tla_community_event_25 extends Presentation:
     ContentSlide(
       titlePart = titleH("The Trouble with Abstraction"),
       bodyPart = modifier(
-
       ),
     ),
     ContentSlide(
-      titlePart = titleH("Known Ways to Relate Specification and Implementation"),
+      titlePart =
+        titleH("Known Ways to Relate Specification and Implementation"),
       bodyPart = modifier(
         ul(
           *.cls := "flex",
@@ -79,10 +78,12 @@ object tla_community_event_25 extends Presentation:
           *.cls := "*:marker:content-['💡_']",
           li("PGo: compile Modular PlusCal (MPCal) into Go"),
           li("Erla+: compile PlusCal into Erlang"),
-          li("Model-guided Testing: use model checker state space to guide implementation tests [TODO: cites]"),
+          li(
+            "Model-guided Testing: use model checker state space to guide implementation tests [TODO: cites]",
+          ),
           li(
             *.cls := "marker:!content-['👉_']",
-            "Trace Validation: instrument implementation, compare captured logs with TLA+ using TLC"
+            "Trace Validation: instrument implementation, compare captured logs with TLA+ using TLC",
           ),
         ),
       ),
@@ -96,7 +97,7 @@ object tla_community_event_25 extends Presentation:
           *.cls := "gap-[.5em]",
           *.cls := "pt-[.5em]",
           *.cls := "list-[upper-roman]",
-          //*.cls := "*:marker:content-['👉_']",
+          // *.cls := "*:marker:content-['👉_']",
           *.cls := "text-[2em]",
           *.cls := "pl-[2em]",
           li("Trace Validation in 5 minutes"),
@@ -114,19 +115,16 @@ object tla_community_event_25 extends Presentation:
     ContentSlide(
       titlePart = titleH("The Idea"),
       bodyPart = modifier(
-
       ),
     ),
     ContentSlide(
       titlePart = titleH("Brief History in Related Work"),
       bodyPart = modifier(
-
       ),
     ),
     ContentSlide(
       titlePart = titleH("Beyond a Manual Solution"),
       bodyPart = modifier(
-
       ),
     ),
     TitleSlide(
@@ -135,43 +133,36 @@ object tla_community_event_25 extends Presentation:
     ContentSlide(
       titlePart = titleH("Automatic Logging for PGo"),
       bodyPart = modifier(
-
       ),
     ),
     ContentSlide(
       titlePart = titleH("The Asynchronous Logging Problem"),
       bodyPart = modifier(
-
       ),
     ),
     ContentSlide(
       titlePart = titleH("Real Time and Vector Clocks"),
       bodyPart = modifier(
-
       ),
     ),
     ContentSlide(
       titlePart = titleH("Generating Trace Validation Boilerplate"),
       bodyPart = modifier(
-
       ),
     ),
     ContentSlide(
       titlePart = titleH("Accounting for MPCal Mapping Macros"),
       bodyPart = modifier(
-
       ),
     ),
     ContentSlide(
       titlePart = titleH("Causality Constraints"),
       bodyPart = modifier(
-
       ),
     ),
     ContentSlide(
       titlePart = titleH("Perturbing the Implementation"),
       bodyPart = modifier(
-
       ),
     ),
     TitleSlide(
@@ -183,19 +174,16 @@ object tla_community_event_25 extends Presentation:
     ContentSlide(
       titlePart = titleH("MPCal Environment Assumptions"),
       bodyPart = modifier(
-
       ),
     ),
     ContentSlide(
       titlePart = titleH("PGo Miscompilation"),
       bodyPart = modifier(
-
       ),
     ),
     ContentSlide(
       titlePart = titleH("TraceLink Instrumentation Bugs"),
       bodyPart = modifier(
-
       ),
     ),
     TitleSlide(
@@ -204,23 +192,20 @@ object tla_community_event_25 extends Presentation:
     ContentSlide(
       titlePart = titleH("Considering Plain TLA+ Models"),
       bodyPart = modifier(
-
       ),
     ),
     ContentSlide(
       titlePart = titleH("Causality and Real Time"),
       bodyPart = modifier(
-
       ),
     ),
     ContentSlide(
       titlePart = titleH("Conclusion"),
       bodyPart = modifier(
-
       ),
     ),
   )
-  
+
   final class TitleSlide(
       backgroundStack: List[os.SubPath] = Nil,
       titlePart: Modifier,
