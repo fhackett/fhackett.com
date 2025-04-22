@@ -112,7 +112,7 @@ def dev(): Unit =
           if printMsg
           then
             println(
-              s"watching for changes in ${os.pwd} (but not ${os.pwd / "prebuild"}), Ctrl^C to end",
+              s"watching for changes in ${os.pwd / "site"} and ${dirs.public}, Ctrl^C to end",
             )
           wait(500)
           if changes.nonEmpty && System

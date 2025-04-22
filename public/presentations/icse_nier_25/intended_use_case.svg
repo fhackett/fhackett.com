@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="191.54008mm"
-   height="88.769196mm"
-   viewBox="0 0 191.54008 88.769196"
+   width="209.68358mm"
+   height="101.32848mm"
+   viewBox="0 0 209.68357 101.32848"
    version="1.1"
    id="svg1"
    inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
@@ -24,9 +24,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="0.95875069"
-     inkscape:cx="200.78212"
-     inkscape:cy="182.00769"
+     inkscape:zoom="1.9175013"
+     inkscape:cx="539.76494"
+     inkscape:cy="158.2789"
      inkscape:window-width="1920"
      inkscape:window-height="979"
      inkscape:window-x="0"
@@ -35,6 +35,54 @@
      inkscape:current-layer="layer1" />
   <defs
      id="defs1">
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect19"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,3.1749998,0,1 @ F,0,0,1,0,3.1749998,0,1 @ F,0,0,1,0,3.1749998,0,1 @ F,0,0,1,0,3.1749998,0,1"
+       radius="12"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <marker
+       style="overflow:visible"
+       id="marker2"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Stylized triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="m 6,0 c -3,1 -7,3 -9,5 0,0 0,-4 2,-5 -2,-1 -2,-5 -2,-5 2,2 6,4 9,5 z"
+         id="path2" />
+    </marker>
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect1"
+       is_visible="true"
+       lpeversion="1.3"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false"
+       uniform="false" />
     <inkscape:path-effect
        effect="bspline"
        id="path-effect8"
@@ -199,6 +247,13 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(20.349211,38.650093)">
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker2)"
+       d="m 126.47897,50.119101 c 0,4.169139 1e-5,8.338192 -20.60866,10.422803 C 85.261653,62.626515 44.046817,62.626515 23.438158,61.056192 2.8294999,59.485869 2.8295001,56.345349 2.8295002,53.204766"
+       id="path1"
+       inkscape:path-effect="#path-effect1"
+       inkscape:original-d="m 126.47897,50.119101 c 0,4.169139 0,8.338192 1e-5,12.507414 -41.217327,0 -82.432163,0 -123.6494802,0 1e-7,-3.140646 3e-7,-6.281166 4e-7,-9.421749"
+       sodipodi:nodetypes="cccc" />
     <g
        id="g8"
        transform="matrix(0.6741155,0,0,0.6741155,33.562533,-9.2729916)">
@@ -382,7 +437,7 @@
          y="-15.964452">?</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;marker-end:url(#ArrowTriangleStylized-9)"
-       d="m 21.660314,-13.441577 c 20.749671,0 41.498922,0 52.910909,1.355054 11.411988,1.355054 13.485746,4.0649986 15.960726,5.4200517 2.474979,1.3550531 5.350941,1.3550531 8.226964,1.3550531"
+       d="m 21.660314,-13.441577 c 20.749671,0 41.498922,0 52.91091,1.355054 11.411987,1.355054 13.485745,4.0649985 15.960725,5.4200516 2.474979,1.3550532 5.350941,1.3550532 8.226964,1.3550532"
        id="path4-9"
        inkscape:path-effect="#path-effect4-2"
        inkscape:original-d="m 21.660314,-13.441577 c 20.749671,0 41.498922,0 62.249014,0 2.073883,2.710108 4.147641,5.4200526 6.221523,8.1301588 2.876077,0 5.752039,0 8.628062,0"
@@ -444,5 +499,209 @@
          style="stroke-width:1"
          x="54.24836"
          y="36.758968">Run</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:500;font-size:5.05727px;line-height:1.25;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans Medium';text-align:center;text-decoration-color:#000000;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.597315;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       x="63.170956"
+       y="57.355679"
+       id="text4"><tspan
+         sodipodi:role="line"
+         id="tspan4"
+         style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.597315"
+         x="63.170956"
+         y="57.355679">Learn from change (or absence of change)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.46667px;line-height:1.25;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans Italic';text-align:center;text-decoration-color:#000000;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:pre;inline-size:73.4412;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       x="150.00624"
+       y="25.215231"
+       id="text7"
+       transform="matrix(0.616796,0,0,0.616796,74.938133,10.483526)"><tspan
+         x="150.00624"
+         y="25.215231"
+         id="tspan8">(a clear difference,<tspan
+   y="25.215231"
+   id="tspan9"> </tspan></tspan><tspan
+         x="150.00624"
+         y="35.798568"
+         id="tspan10">precise meaning is<tspan
+   y="35.798568"
+   id="tspan11"> </tspan></tspan><tspan
+         x="150.00624"
+         y="46.381904"
+         id="tspan12">future work)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:1.62064px;line-height:1.25;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Semi-Bold';text-align:start;text-decoration-color:#000000;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:0.0552491;stroke-linecap:round;stroke-linejoin:round"
+       x="143.46292"
+       y="-28.668215"
+       id="text4-7"><tspan
+         sodipodi:role="line"
+         id="tspan4-0"
+         x="143.46292"
+         y="-28.668215"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Semi-Bold';fill:#000000;fill-opacity:1;stroke-width:0.0552491">...</tspan><tspan
+         sodipodi:role="line"
+         x="143.46292"
+         y="-26.642414"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Semi-Bold';fill:#000000;fill-opacity:1;stroke-width:0.0552491"
+         id="tspan17">[mk-app] #655 = #652 #523</tspan><tspan
+         sodipodi:role="line"
+         x="143.46292"
+         y="-24.616615"
+         id="tspan5-9"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Semi-Bold';fill:#000000;fill-opacity:1;stroke-width:0.0552491">[instance] 0 #655</tspan><tspan
+         sodipodi:role="line"
+         x="143.46292"
+         y="-22.590815"
+         id="tspan6-3"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Semi-Bold';fill:#000000;fill-opacity:1;stroke-width:0.0552491">[attach-enode] #655 0</tspan><tspan
+         sodipodi:role="line"
+         x="143.46292"
+         y="-20.565014"
+         id="tspan7"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Semi-Bold';fill:#000000;fill-opacity:1;stroke-width:0.0552491">[end-of-instance]</tspan><tspan
+         sodipodi:role="line"
+         x="143.46292"
+         y="-18.539215"
+         id="tspan8-6"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Semi-Bold';fill:#000000;fill-opacity:1;stroke-width:0.0552491">[mk-app] #655 = #652 #523</tspan><tspan
+         sodipodi:role="line"
+         x="143.46292"
+         y="-16.513414"
+         id="tspan9-0"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Semi-Bold';fill:#000000;fill-opacity:1;stroke-width:0.0552491">[mk-proof] #656 rewrite #655</tspan><tspan
+         sodipodi:role="line"
+         x="143.46292"
+         y="-14.487615"
+         id="tspan10-6"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Semi-Bold';fill:#000000;fill-opacity:1;stroke-width:0.0552491">[mk-app] #657 = #485 #523</tspan><tspan
+         sodipodi:role="line"
+         x="143.46292"
+         y="-12.461815"
+         id="tspan11-2"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Semi-Bold';fill:#000000;fill-opacity:1;stroke-width:0.0552491">[mk-proof] #658 trans #654 #656 #657</tspan><tspan
+         sodipodi:role="line"
+         x="143.46292"
+         y="-10.436014"
+         id="tspan12-6"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Semi-Bold';fill:#000000;fill-opacity:1;stroke-width:0.0552491">[mk-app] #659 =&gt; #523 #523</tspan><tspan
+         sodipodi:role="line"
+         x="143.46292"
+         y="-8.4102144"
+         id="tspan13"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Semi-Bold';fill:#000000;fill-opacity:1;stroke-width:0.0552491">[mk-app] #660 = #486 #659</tspan><tspan
+         sodipodi:role="line"
+         x="143.46292"
+         y="-6.3844142"
+         id="tspan14"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Semi-Bold';fill:#000000;fill-opacity:1;stroke-width:0.0552491">[mk-proof] #661 monotonicity #658 #660</tspan><tspan
+         sodipodi:role="line"
+         x="143.46292"
+         y="-4.358614"
+         id="tspan15"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Semi-Bold';fill:#000000;fill-opacity:1;stroke-width:0.0552491">[inst-discovered] theory-solving 0</tspan><tspan
+         sodipodi:role="line"
+         x="143.46292"
+         y="-2.3328142"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Semi-Bold';fill:#000000;fill-opacity:1;stroke-width:0.0552491"
+         id="tspan16">...</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round"
+       id="rect19"
+       width="36.841564"
+       height="10.072787"
+       x="145.62036"
+       y="-20.151978"
+       sodipodi:type="rect"
+       ry="5"
+       rx="5" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:1.13495px;line-height:1.25;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Semi-Bold';text-align:start;text-decoration-color:#000000;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:0.0386915;stroke-linecap:round;stroke-linejoin:round"
+       x="154.51546"
+       y="40.998642"
+       id="text4-7-9"><tspan
+         sodipodi:role="line"
+         id="tspan4-0-2"
+         x="154.51546"
+         y="40.998642"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Semi-Bold';fill:#000000;fill-opacity:1;stroke-width:0.0386915">...</tspan><tspan
+         sodipodi:role="line"
+         x="154.51546"
+         y="42.417328"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Semi-Bold';fill:#000000;fill-opacity:1;stroke-width:0.0386915"
+         id="tspan17-0">[mk-app] #655 = #652 #523</tspan><tspan
+         sodipodi:role="line"
+         x="154.51546"
+         y="43.836014"
+         id="tspan5-9-2"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Semi-Bold';fill:#000000;fill-opacity:1;stroke-width:0.0386915">[instance] 0 #655</tspan><tspan
+         sodipodi:role="line"
+         x="154.51546"
+         y="45.254704"
+         id="tspan6-3-3"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Semi-Bold';fill:#000000;fill-opacity:1;stroke-width:0.0386915">[attach-enode] #655 0</tspan><tspan
+         sodipodi:role="line"
+         x="154.51546"
+         y="46.673389"
+         id="tspan7-7"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Semi-Bold';fill:#000000;fill-opacity:1;stroke-width:0.0386915">[end-of-instance]</tspan><tspan
+         sodipodi:role="line"
+         x="154.51546"
+         y="48.092079"
+         id="tspan8-6-5"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Semi-Bold';fill:#000000;fill-opacity:1;stroke-width:0.0386915">[mk-app] #655 = #652 #523</tspan><tspan
+         sodipodi:role="line"
+         x="154.51546"
+         y="49.510765"
+         id="tspan9-0-9"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Semi-Bold';fill:#000000;fill-opacity:1;stroke-width:0.0386915">[mk-proof] #656 rewrite #655</tspan><tspan
+         sodipodi:role="line"
+         x="154.51546"
+         y="50.929455"
+         id="tspan10-6-2"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Semi-Bold';fill:#000000;fill-opacity:1;stroke-width:0.0386915">[mk-app] #657 = #485 #523</tspan><tspan
+         sodipodi:role="line"
+         x="154.51546"
+         y="52.348141"
+         id="tspan11-2-2"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Semi-Bold';fill:#000000;fill-opacity:1;stroke-width:0.0386915">[mk-proof] #658 trans #654 #656 #657</tspan><tspan
+         sodipodi:role="line"
+         x="154.51546"
+         y="53.766827"
+         id="tspan12-6-8"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Semi-Bold';fill:#000000;fill-opacity:1;stroke-width:0.0386915">[mk-app] #659 =&gt; #523 #523</tspan><tspan
+         sodipodi:role="line"
+         x="154.51546"
+         y="55.185516"
+         id="tspan13-9"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Semi-Bold';fill:#000000;fill-opacity:1;stroke-width:0.0386915">[mk-app] #660 = #486 #659</tspan><tspan
+         sodipodi:role="line"
+         x="154.51546"
+         y="56.604202"
+         id="tspan14-7"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Semi-Bold';fill:#000000;fill-opacity:1;stroke-width:0.0386915">[mk-proof] #661 monotonicity #658 #660</tspan><tspan
+         sodipodi:role="line"
+         x="154.51546"
+         y="58.022892"
+         id="tspan15-3"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Semi-Bold';fill:#000000;fill-opacity:1;stroke-width:0.0386915">[inst-discovered] theory-solving 0</tspan><tspan
+         sodipodi:role="line"
+         x="154.51546"
+         y="59.441578"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Semi-Bold';fill:#000000;fill-opacity:1;stroke-width:0.0386915"
+         id="tspan16-6">...</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.42465px;line-height:1.25;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans';text-align:center;text-decoration-color:#000000;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.758817;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+       x="166.1096"
+       y="-13.390565"
+       id="text6-3-3"><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans';text-align:center;text-anchor:middle;stroke-width:0.758817"
+         x="166.1096"
+         y="-13.390565"
+         id="tspan18">&gt;100MB logs</tspan></text>
   </g>
 </svg>

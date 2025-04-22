@@ -181,8 +181,8 @@ object icse_nier_25 extends Presentation:
         *.cls := "justify-items-center",
         img(
           *.src := "icse_nier_25/intended_use_case.svg",
-          *.cls := "w-[75%]",
-          *.cls := "pt-[3em]",
+          *.cls := "w-[85%]",
+          *.cls := "pt-[2em]",
         ),
       ),
     ),
