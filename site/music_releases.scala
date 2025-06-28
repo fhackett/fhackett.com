@@ -108,7 +108,7 @@ object music_releases extends Target:
   val releases: List[Release] = List(
     Release(
       name = "two unlit lanterns",
-      date = "June'24",
+      date = "June'25",
       coverArt = "/album-covers/two unlit lanterns.jpg",
       bandCamp = Some("https://fhackett.bandcamp.com/album/two-unlit-lanterns"),
       soundCloud =
