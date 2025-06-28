@@ -107,6 +107,30 @@ object music_releases extends Target:
 
   val releases: List[Release] = List(
     Release(
+      name = "two unlit lanterns",
+      date = "June'24",
+      coverArt = "/album-covers/two unlit lanterns.jpg",
+      bandCamp = Some("https://fhackett.bandcamp.com/album/two-unlit-lanterns"),
+      soundCloud =
+        Some("https://soundcloud.com/finnhackett/sets/two-unlit-lanterns"),
+      content = frag"""
+          ... passing in the dark. I was thinking about how easily things can go wrong.
+
+          I was also simply challenging myself to go beyond what I'm normally capable of, as usual I suppose. You know the drill.
+
+          The album art is an old picture, looking up into the night sky from the center of X̱wi7x̱wa Library, taken with a cheap flip-phone.
+
+          ${credits(
+          li(
+            "Kira Potter: spoken word and backing vocals on \"every broken mirror is me\".",
+          ),
+          li("Shadab Shaikh: spoken word on \"every broken mirror is me\"."),
+          li("William J. Bowman: spoken word on \"to the mind factory\"."),
+          li("Joseph Wonsil: spoken word on \"the purpose\"."),
+        )}
+      """,
+    ),
+    Release(
       name = "dreamcatcher",
       date = "November'24",
       coverArt = "/album-covers/dreamcatcher.png",
@@ -135,10 +159,10 @@ object music_releases extends Target:
 
           ${credits(
           li(
-            """Martin Hackett, tin whistle, 笛子, and Quena on "fetch the etching fluid", "a hidden cavern full of lies", "but there's sand in the hourglass", "black hole in the river", and "and so I became non-linear".""",
+            """Martin Hackett: tin whistle, 笛子, and Quena on "fetch the etching fluid", "a hidden cavern full of lies", "but there's sand in the hourglass", "black hole in the river", and "and so I became non-linear".""",
           ),
           li(
-            """Tim Straubinger, foley percussion on "black hole in the river" and "far woodpecker".""",
+            """Tim Straubinger: foley percussion on "black hole in the river" and "far woodpecker".""",
           ),
           li(
             """Shayan Hosseini: foley and chatter in between takes for an academic presentation on "black hole in the river".""",
@@ -161,14 +185,14 @@ object music_releases extends Target:
           To make the concept happen, I used a mixture of tempo automation, timestretched midi clips (so the notes shift on and off the grid), and modular delay/resampler patches.
 
           ${credits(
-          li("Kaddy Beck, sculpture used in album art."),
+          li("Kaddy Beck: sculpture used in album art."),
           li(
-            """Martin Hackett, Korg MS-20 on "crystal hexagons that don't melt"."""",
+            """Martin Hackett: Korg MS-20 on "crystal hexagons that don't melt"."""",
           ),
           li(
-            """Tim Straubinger, databending on "crystal hexagons that don't melt"."""",
+            """Tim Straubinger: databending on "crystal hexagons that don't melt"."""",
           ),
-          li("""Kira Potter, vocals on "green algae on our cobalt beach""""),
+          li("""Kira Potter: vocals on "green algae on our cobalt beach""""),
         )}
         """,
     ),
@@ -216,14 +240,14 @@ object music_releases extends Target:
 
           ${credits(
           li(
-            "Martin Hackett, Korg MS-20 played on \"monsieur hulot's pipe machine\".",
+            "Martin Hackett: Korg MS-20 played on \"monsieur hulot's pipe machine\".",
           ),
-          li("Onkle Honky, horn demo on \"monsieur hulot's pipe machine\"."),
+          li("Onkle Honky: horn demo on \"monsieur hulot's pipe machine\"."),
           li(
-            "[redacted] Airlines, announcements on \"that's not wensleydale, gromit!\", \"modern glass\", and \"mercury\".",
+            "[redacted] Airlines: announcements on \"that's not wensleydale, gromit!\", \"modern glass\", and \"mercury\".",
           ),
           li(
-            "Shayan Hosseini, academic presentation resampled on \"boat trip in amber\".",
+            "Shayan Hosseini: academic presentation resampled on \"boat trip in amber\".",
           ),
         )}
 
@@ -286,10 +310,10 @@ object music_releases extends Target:
 
           ${credits(
           li(
-            "Kira Potter - comments on in-progress drafts, concept for the title.",
+            "Kira Potter: comments on in-progress drafts, concept for the title.",
           ),
           li(
-            "Martin Hackett - one of his paintaings is partially visible in the album art.",
+            "Martin Hackett: one of his paintings is partially visible in the album art.",
           ),
         )}
           """,
@@ -342,10 +366,10 @@ object music_releases extends Target:
 
           ${credits(
           li(
-            """Tim Straubinger, a variety of short impacts and household items""",
+            """Tim Straubinger: a variety of short impacts and household items""",
           ),
           li(
-            """Ivan Beschasnikh, some of the longer-form environmental field recordings, most notably on floating forest""",
+            """Ivan Beschasnikh: some of the longer-form environmental field recordings, most notably on floating forest""",
           ),
         )}
         """,
