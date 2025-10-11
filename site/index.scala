@@ -86,8 +86,8 @@ object index extends Target:
                 *.cls := "pl-4",
                 *.cls := "list-[square]",
                 tags.li(frag"""
-                  In June-August'25, we're planning a summer internship at MongoDB with ${people.jdavis.link}, ${people.murat.link}, and ${people.wschultz.link},
-                  where I would be working on industrial TLA+ and trace validation.
+                  In June-August'25, interned at MongoDB with ${people.jdavis.link}, ${people.murat.link}, and ${people.wschultz.link},
+                  where I worked on trace-validating concurrent industrial systems in TLA+.
                 """),
                 tags.li(frag"""
                   In September-November'24, I visited ${people.stephanMerz.link}, ${people.horatiuCirstea.link}, and the rest of the ${a(
@@ -257,9 +257,16 @@ object index extends Target:
 
   val talks: List[Talk | InvitedTalk] = List(
     Talk(
+      title = "Debugging for Scala Control Flow DSLs",
+      href = None,
+      venueName = "Scala Workshop'25",
+      venueHref = "https://2025.workshop.scala-lang.org/?",
+      authors = List(people.fhackett, people.bestchai),
+    ),
+    Talk(
       title = "Automating Trace Validation with PGo",
       href = None,
-      venueName = "TLA+Community'25",
+      venueName = "TLA+ Community'25",
       venueHref = "https://conf.tlapl.us/2025-etaps/",
       authors = List(people.fhackett, people.bestchai),
     ),
@@ -314,7 +321,7 @@ object index extends Target:
       title =
         "Promises and Challenges in Bridging TLA+ Designs with Implementations",
       href = Some("https://www.youtube.com/watch?v=W6DrQk8o5tk"),
-      venueName = "TLA+Conf'24",
+      venueName = "TLA+ Conf'24",
       venueHref = "https://conf.tlapl.us/2024/",
       authors = List(people.fhackett, people.bestchai),
     ),
@@ -328,7 +335,7 @@ object index extends Target:
     Talk(
       title = "Building Correct Distributed Systems with the PGo Compiler",
       href = Some("https://www.youtube.com/watch?v=XHqd60ZeUBo"),
-      venueName = "TLA+Conf'22",
+      venueName = "TLA+ Conf'22",
       venueHref = "https://conf.tlapl.us/2022/",
       authors = List(
         people.fhackett,
@@ -342,7 +349,7 @@ object index extends Target:
       title =
         "Compiling Distributed System Models into Implementations with PGo",
       href = Some("https://www.youtube.com/watch?v=GvrpUeDN5zs"),
-      venueName = "TLA+Conf'19",
+      venueName = "TLA+ Conf'19",
       venueHref = "https://conf.tlapl.us/2019/",
       authors = List(
         people.fhackett,
@@ -554,6 +561,16 @@ object index extends Target:
     )
 
   val publications: List[Publication] = List(
+    Publication(
+      title = "TraceLinking Implementations with their Verified Designs",
+      href = "https://doi.org/10.1145/3763128",
+      venueName = "OOPSLA'25",
+      venueHref = "https://2025.splashcon.org/track/OOPSLA?",
+      pdfLink = Some("/files/oopsla25-tracelink.pdf"),
+      authors = List(people.fhackett, people.bestchai),
+      badges =
+        Some(badgesGen(available = true, reusable = true, reproduced = true)),
+    ),
     Publication(
       title = "Listening to the Firehose: Sonifying Z3's Behavior",
       href =

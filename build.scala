@@ -1,7 +1,7 @@
 //> using scala 3
 //> using options -Werror -deprecation -feature -Yexplicit-nulls
-//> using dep com.lihaoyi::os-lib:0.11.4
-//> using dep com.lihaoyi::os-lib-watch:0.11.4
+//> using dep com.lihaoyi::os-lib:0.11.5
+//> using dep com.lihaoyi::os-lib-watch:0.11.5
 //> using dep com.lihaoyi::scalatags:0.13.1
 package site
 
