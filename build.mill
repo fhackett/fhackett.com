@@ -1,0 +1,117 @@
+//| mill-version: 1.1.5
+//| mill-jvm-version: temurin:25
+//| mill-jvm-opts: ["--enable-native-access=ALL-UNNAMED"]
+//| mvnDeps:
+//| - org.jsoup:jsoup:1.22.2
+//| - com.lihaoyi::cask:0.11.3
+package build
+
+import mill.*
+import mill.api.BuildCtx
+import mill.api.Cross.ToSegments
+import org.jsoup.nodes.Document
+import org.jsoup.Jsoup
+import java.time.LocalDateTime
+import org.jsoup.nodes.Element
+
+def publicDirRaw = moduleDir / "public"
+def publicDir = Task.Source(publicDirRaw)
+
+def pageFilesRaw: Seq[os.SubPath] =
+  BuildCtx.watchValue:
+    os.walk(publicDirRaw)
+      .filter(_.last.endsWith(".html"))
+      .map(_.subRelativeTo(publicDirRaw))
+end pageFilesRaw
+
+def pageFiles = Task.Input(pageFilesRaw)
+
+def normalizeCSS = Task:
+  val outFile = Task.dest / "normalize.css"
+  os.write(outFile, requests.get("https://necolas.github.io/normalize.css/8.0.1/normalize.css"))
+  PathRef(outFile)
+end normalizeCSS
+
+def templateFile = Task.Source(os.sub / "template.html")
+
+def initializedTemplate: T[PathRef] = Task:
+  val doc = Jsoup.parse(templateFile().path.toIO)
+
+  val nav = doc.expectFirst("nav.navigation > span.links")
+  val links = Task.traverse(pageFilesRaw) { file =>
+    val pg = page(file)
+    pg.title.zip(pg.href)
+  }()
+  links
+    .filter(_._1 != "404")
+    .foreach: (title, href) =>
+      nav.appendChild:
+        Element("a")
+          .text(title)
+          .attr("href", (os.root / href).toString)
+
+  doc.expectFirst("footer").text {
+    s"© ${LocalDateTime.now().getYear()} Finn Hackett"
+  }
+
+  val outFile = Task.dest / "template-initialized.html"
+  os.write(outFile, doc.outerHtml())
+  PathRef(outFile)
+end initializedTemplate
+
+trait PageModule extends Cross.Module[os.SubPath]:
+  def href: T[os.SubPath] = crossValue
+
+  def file = Task.Source(publicDirRaw / crossValue)
+  
+  def title: T[String] = Task:
+    val doc = Jsoup.parse(file().path.toIO)
+    doc.expectFirst("title").text().trim()
+  end title
+
+  def rendered: T[PathRef] = Task:
+    val template = Jsoup.parse(initializedTemplate().path.toIO)
+    val doc = Jsoup.parse(file().path.toIO)
+
+    val docBody = doc.expectFirst("body")
+
+    template
+      .expectFirst("head > title")
+      .text(s"Finn Hackett: ${title()}")
+
+    template
+      .expectFirst("site-content")
+      .appendChild(docBody)
+      .unwrap()
+
+    val outFile = Task.dest / "rendered.html"
+    os.write(outFile, template.outerHtml())
+    PathRef(outFile)
+  end rendered
+end PageModule
+
+object page extends Cross[PageModule](pageFilesRaw)
+
+def pageTitles: T[Seq[String]] = Task:
+  Task.traverse(pageFilesRaw)(file => page(file).title)()
+end pageTitles
+
+def dist: T[PathRef] = Task:
+  os.list(publicDir().path)
+    .foreach: file =>
+      os.copy.into(file, Task.dest)
+  val renderedPages = Task.traverse(pageFilesRaw) { file =>
+    val pg = page(file)
+    pg.href.zip(pg.rendered)
+  }()
+  renderedPages.foreach: (href, render) =>
+    os.copy.over(render.path, Task.dest / href)
+  
+  os.copy.into(normalizeCSS().path, Task.dest)
+
+  PathRef(Task.dest)
+end dist
+
+def dev = Task.Worker:
+  site.StaticServer(dist().path)
+end dev

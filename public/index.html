@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>About</title>
+  </head>
+  <body>
+    <main class="container">
+      <div class="float-img">
+        <img src="/gfx/martin-1.png"></img>
+        <div>© 2024 Martin Hackett</div>
+      </div>
+
+      <section class="about">
+        <h1>About 📖</h1>
+        <p>
+          I'm a PhD student in the <a href="https://systopia.cs.ubc.ca/">Systopia</a> and <a href="https://spl.cs.ubc.ca/index.html">Software Practices</a> labs at the University of British Columbia.
+          My interests relate to programming language design, implementation, and formally modeling systems.
+          I usually target domains that are challenging to program, like concurrent and distributed systems, compilers, interpreters.
+          Often, I work with <a href="https://tlapl.us">TLA+</a>.
+        </p>
+        <p>
+          Models don't need to be one-off, isolated artifacts.
+          With a precise enough model, we can automatically generate an implementation, or most of one at least.
+          We can also cross-check real executions against our models, to see if we modeled what the implementation actually does.
+          See below for specific projects, talks, and peer-reviewed publications.
+        </p>
+      </section>
+
+      <section>
+        <h1>Contact 📡</h1>
+        <div class="contacts">
+          <span>E-Mail</span>
+          <span>📧</span>
+          <span>≝</span>
+          <a href="mailto:fhackett@cs.ubc.ca">fhackett@cs.ubc.ca</a>
+
+          <span>Github</span>
+          <img src="/icons/github-mark.svg" class="icon" />
+          <span>≝</span>
+          <a href="https://www.github.com/fhackett">https://www.github.com/fhackett</a>
+        </div>
+      </section>
+
+      <section>
+        <h1>Recent Projects 🛠️</h1>
+        <dl class="projects">
+          <dt>OmniLink <a href="https://arxiv.org/abs/2601.11836">[ArXiv]</a></dt>
+          <dd>
+            Tool for validating traces of concurrent implementations against high-level specifications in TLA+.
+            We combine TLA+ trace validation and linearizability checking, and extend the combination with a substep linearizability formalism.
+            The resulting validator can check runtime traces with over 500k events against complex TLA+ specifications, and has been evaluated on <a href="https://source.wiredtiger.com/">WiredTiger</a>, <a href="https://doi.org/10.1145/3774934.3786437">Balanced Augmented Trees</a>, and <a href="https://github.com/cameron314/concurrentqueue">ConcurrentQueue</a>.
+
+            Collaboration with <a href="https://yuanhaow.github.io/">Yuanhao Wei</a> at UBC and <a href="https://emptysqua.re/blog/">A. Jesse Jiryu Davis</a> at MongoDB.
+          </dd>
+
+          <dt>Specula</dt>
+          <dd>
+            Building models requires significant expertise, and can be tedious.
+            This is a barrier to adoption, and limits their usefulness in practice.
+            Specula uses LLMs to infer TLA+ models from implementation code, which can then be used to detect design issues that can neither be detected by existing manual analysis, nor regular LLM bug finding.
+            To mitigate a range of possible hallucinations, the generated models are both model checked and validated against runtime implementation traces, with validation feedback looped back into the LLM generation process.
+
+            Collaboration with <a href="https://kewbi.sh/blog/">Emilia Ma</a> and several excellent collaborators from Nanjing University and the University of Illinois Urbana-Champaign.
+            Emilie leads the UBC side of the project.
+          </dd>
+
+          <dt>Forja</dt>
+          <dd>
+            Current tooling for the TLA+ ecosystem is monolithic, and not well suited for extension.
+            Research projects will usually fork the existing TLA+ tools, and the prototyped changes will be left behind as the main branch evolves.
+            Forja is a mechanism for specifying, rewriting, and validating abstract syntax trees, which we are prototyping as a means to enhance and cross-validate existing tools in the TLA+ space.
+          </dd>
+
+          <dt><a href="https://github.com/distCompiler/pgo">PGo</a></dt>
+          <dd>
+            Compiler from distributed system specifications into implementations, translating TLA+ based Modular PlusCal specifications into Go.
+            We used it to build a Raft-based key-value store which outperformed other specification-compiled implementations.
+            There remain open questions about how to go beyond known limitations of specification compilation, and the DCal project, when I return to it, aims to explore some possibilities there.
+            We also used PGo to prototype TraceLink, an automatic instrumentation layer for performing trace validation of systems built with PGo, and a precursor to OmniLink.
+          </dd>
+        </dl>
+      </section>
+
+      <div class="float-img">
+        <img src="/gfx/martin-2.png"></img>
+        <div>© 2024 Martin Hackett</div>
+      </div>
+
+      <section>
+        <h1>Education 🧑‍🎓</h1>
+        <ul class="education">
+          <span>🏫</span>
+          <li>
+            PhD, University of British Columbia, 2020-current. Supervised by <a href="https://www.cs.ubc.ca/~bestchai/">Ivan Beschastnikh</a>.
+          </li>
+          <span>🎓</span>
+          <li>
+            MMath, University of Waterloo, 2018-2020. Supervised by <a href="https://plg.uwaterloo.ca/~olhotak/">Ondřej Lhoták</a>.
+          </li>
+          <span>🎓</span>
+          <li>
+            BSc w/Co-op, University of British Columbia, 2013-2018.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h1>Awards 🏆</h1>
+        <ul class="awards">
+          <span>⭐</span>
+          <li>MongoDB PhD Fellowship (2024-2025).</li>
+          <span>⭐</span>
+          <li>Student Community Building Award (2023).</li>
+          <span>⭐</span>
+          <li>Graduate Teaching Assistant Award (2022).</li>
+          <span>⭐</span>
+          <li>MITACS Accelerate (2019 - 2020).</li>
+          <span>⭐</span>
+          <li>Martin Frauendorf Memorial Prize in Computer Science (2018).</li>
+          <span>⭐</span>
+          <li>International Leader of Tomorrow (2013-2018).</li>
+        </ul>
+      </section>
+
+      <section>
+        <h1>Talks 🎙️</h1>
+        <div class="talk">
+          <div class="title">
+            <a href="https://2025.workshop.scala-lang.org/">[Scala Workshop'25]</a>
+            <span class="name">Debugging for Scala Control Flow DSLs</span>
+          </div>
+          <div class="authors">
+            <a href="https://fhackett.com/">Finn Hackett</a>
+            and <a href="https://www.cs.ubc.ca/~bestchai/">Ivan Beschastnikh</a>
+          </div>
+        </div>
+        <div class="talk">
+          <div class="title">
+            <a href="https://conf.tlapl.us/2025-etaps/">[TLA+ Community'25]</a>
+            <span class="name">Automating Trace Validation with PGo</span>
+          </div>
+          <div class="authors">
+            <a href="https://fhackett.com/">Finn Hackett</a>
+            and <a href="https://www.cs.ubc.ca/~bestchai/">Ivan Beschastnikh</a>
+          </div>
+        </div>
+        <div class="invited-talks">
+          <div class="title">
+            Invited talk:
+            <b>Compiling Distributed System Models with PGo, and Beyond</b>
+          </div>
+          <ul>
+            <li>
+              📆 November'24
+              <a href="https://www.cst.cam.ac.uk/research/themes/systems-and-networking">@Cambridge University</a>
+              <a href="https://www.cl.cam.ac.uk/research/srg/seminars/videos/2024-11-14.mp4">[video]</a>
+              (hosted by <a class="underline hover:no-underline color-black bg-white" href="https://www.cst.cam.ac.uk/people/rmm1002">Richard Mortier</a>)
+            </li>
+            <li>
+              📆 October'24
+              <a href="https://softech.cs.rptu.de/">@RPTU Kaiserslautern-Landau</a>
+              (hosted by <a href="https://softech.cs.rptu.de/team/annettebieniusa">Annette Bieniusa</a>)
+            </li>
+            <li>
+              📆 August'24
+              <a href="https://mrg.cs.ox.ac.uk/">@Oxford University</a>
+              (hosted by <a href="https://www.cs.ox.ac.uk/people/nobuko.yoshida/">Nobuko Yoshida</a>)
+            </li>
+            <li>
+              📆 August'24
+              <a href="https://www.imperial.ac.uk/computing">@Imperial College London</a>
+              (hosted by <a href="https://marioskogias.github.io/">Marios Kogias</a>)
+            </li>
+            <li>
+              📆 July'24
+              <a href="https://www.cst.cam.ac.uk/research/themes/systems-and-networking">@Cambridge University</a>
+              (hosted by <a href="https://heidihoward.github.io/">Heidi Howard</a> and <a href="https://ryan.freumh.org/about.html">Ryan Gibb</a>)
+            </li>
+            <li>
+              📆 January'24
+              <a href="https://www.microsoft.com/en-us/research/group/azure-security-privacy/">@Microsoft Research Cambridge</a>
+              (hosted by <a href="https://www.microsoft.com/en-us/research/people/mattpark/">Matthew Parkinson</a>)
+            </li>
+          </ul>
+        </div>
+        <div class="talk">
+           <div class="title">
+            <a href="https://conf.tlapl.us/2024/">[TLA+ Conf'24]</a>
+            <span class="name">Promises and Challenges in Bridging TLA+ Designs with Implementations</span>
+          </div>
+          <div class="authors">
+            <a href="https://fhackett.com/">Finn Hackett</a>
+            and <a href="https://www.cs.ubc.ca/~bestchai/">Ivan Beschastnikh</a>
+          </div>
+        </div>
+        <div class="talk">
+           <div class="title">
+            <a href="https://www.usenix.org/conference/srecon23americas">[SREcon'23 Americas]</a>
+            <span class="name">Turning an Incident Report into a Design Issue with TLA+</span>
+          </div>
+          <div class="authors">
+            <a href="https://fhackett.com/">Finn Hackett</a>,
+            Joshua Rowe,
+            and <a href="https://lemmster.de/">Markus Alexander Kuppe</a>
+          </div>
+        </div>
+        <div class="talk">
+          <div class="title">
+            <a href="https://conf.tlapl.us/2022/">[TLA+ Conf'22]</a>
+            <a href="https://www.youtube.com/watch?v=XHqd60ZeUBo" class="name">Building Correct Distributed Systems with the PGo Compiler</a>
+          </div>
+          <div class="authors">
+            <a href="https://fhackett.com/">Finn Hackett</a>,
+            <a href="https://shayanh.com/">Shayan Hosseini</a>,
+            Ruchit Palrecha,
+            Yennis Ye,
+            and <a href="https://www.cs.ubc.ca/~bestchai/">Ivan Beschastnikh</a>
+          </div>
+        </div>
+        <div class="talk">
+          <div class="title">
+            <a href="https://conf.tlapl.us/2019/">[TLA+ Conf'19]</a>
+            <a href="https://www.youtube.com/watch?v=GvrpUeDN5zs" class="name">Compiling Distributed System Models into Implementations with PGo</a>
+          </div>
+          <div class="authors">
+            <a href="https://www.cs.ubc.ca/~bestchai/">Ivan Beschastnikh</a>,
+            Renato Costa,
+            and <a href="https://minhdo.org/">Matthew Do</a>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h1>Publications 📜</h1>
+        <div class="publication">
+          <div class="title">
+            <a href="https://iclr.cc/Conferences/2026">[ICLR'26]</a>
+            <a href="https://arxiv.org/abs/2509.23130" class="name">SysMoBench: Evaluating AI on Formally Specifying Complex Real-World Systems</a>
+          </div>
+          <div class="authors">
+            Qian Cheng,
+            <a href="https://tangruize.gitlab.io/">Ruize Tang</a>,
+            <a href="https://kewbi.sh/">Emilie Ma</a>,
+            <a href="https://fhackett.com/">Finn Hackett</a>,
+            Peiyang He,
+            Yiming Su,
+            <a href="https://www.cs.ubc.ca/~bestchai/">Ivan Beschastnikh</a>,
+            <a href="https://cs.nju.edu.cn/yuhuang/index.htm">Yu Huang</a>,
+            Xiaoxing Ma,
+            and <a href="https://tianyin.github.io/">Tianyin Xu</a>
+          </div>
+          <div class="authors">
+            ❤️ Commentary blog posts by <a href="https://emptysqua.re/blog/review-sysmobench/">A. Jesse Jiryu Davis</a> and <a href="https://muratbuffalo.blogspot.com/2026/03/sysmobench-evaluating-ai-on-formally.html">Murat Demirbas</a>
+          </div>
+        </div>
+        <div class="publication">
+          <div class="title">
+            <a href="https://2025.splashcon.org/track/OOPSLA">[OOPSLA'25]</a>
+            <a href="https://doi.org/10.1145/3763128" class="name">TraceLinking Implementations with their Verified Designs</a>
+            <a href="/files/oopsla25-tracelink.pdf">[pdf]</a>
+            <a href="https://www.acm.org/publications/policies/artifact-review-and-badging-current#reproduced">
+              <img src="/icons/results_reproduced_v1_1.png" class="icon"></img>
+            </a>
+            <a href="https://www.acm.org/publications/policies/artifact-review-and-badging-current#available">
+              <img src="/icons/artifacts_available_v1_1.png" class="icon"></img>
+            </a>
+            <a href="https://www.acm.org/publications/policies/artifact-review-and-badging-current#reusable">
+              <img src="/icons/artifacts_reusable_v1_1.png" class="icon"></img>
+            </a>
+          </div>
+          <div class="authors">
+            <a href="https://fhackett.com/">Finn Hackett</a>
+            and <a href="https://www.cs.ubc.ca/~bestchai/">Ivan Beschastnikh</a>
+          </div>
+        </div>
+        <div class="publication">
+          <div class="title">
+            <a href="https://conf.researchr.org/track/icse-2025/icse-2025-nier">[ICSE-NIER'25]</a>
+            <a href="https://conf.researchr.org/details/icse-2025/icse-2025-nier/1/Listening-to-the-Firehose-Sonifying-Z3-s-Behavior" class="name">Listening to the Firehose: Sonifying Z3's Behavior</a>
+            <a href="/files/icse25-nier-z3hydrant.pdf">[pdf]</a>
+            <a href="https://www.acm.org/publications/policies/artifact-review-and-badging-current#functional">
+              <img src="/icons/artifacts_evaluated_functional_v1_1.png" class="icon"></img>
+            </a>
+            <a href="https://www.acm.org/publications/policies/artifact-review-and-badging-current#available">
+              <img src="/icons/artifacts_available_v1_1.png" class="icon"></img>
+            </a>
+            <a href="https://www.acm.org/publications/policies/artifact-review-and-badging-current#reusable">
+              <img src="/icons/artifacts_reusable_v1_1.png" class="icon"></img>
+            </a>
+          </div>
+          <div class="authors">
+            <a href="https://fhackett.com/">Finn Hackett</a>
+            and <a href="https://www.cs.ubc.ca/~bestchai/">Ivan Beschastnikh</a>
+          </div>
+        </div>
+        <div class="publication">
+          <div class="title">
+            <a href="https://www.usenix.org/publications/loginonline/">[;login:]</a>
+            <a href="https://www.usenix.org/publications/loginonline/going-beyond-incident-report-tla" class="name">Going Beyond an Incident Report with TLA+</a>
+            <a href="/files/_login__Going_Beyond_an_Incident_Report_with_TLA_.pdf">[pdf]</a>
+          </div>
+          <div class="authors">
+            <a href="https://fhackett.com/">Finn Hackett</a>,
+            Joshua Rowe,
+            and <a href="https://lemmster.de/">Markus Alexander Kuppe</a>
+          </div>
+          <div class="authors">
+            ❤️ <a href="https://muratbuffalo.blogspot.com/2023/08/going-beyond-incident-report-with-tla.html">Commentary blog post</a> by <a href="https://cse.buffalo.edu/~demirbas/">Murat Demirbas</a>
+          </div>
+        </div>
+        <div class="publication">
+          <div class="title">
+            <a href="https://asplos-conference.org/2023">[ASPLOS'23]</a>
+            <a href="https://doi.org/10.1145/3575693.3575695" class="name">Compiling Distributed System Models with PGo</a>
+            <a href="/files/asplosb23main-p12-p-e73de3693c-62943-final.pdf">[pdf]</a>
+            <a href="https://www.acm.org/publications/policies/artifact-review-and-badging-current#reproduced">
+              <img src="/icons/results_reproduced_v1_1.png" class="icon"></img>
+            </a>
+            <a href="https://www.acm.org/publications/policies/artifact-review-and-badging-current#functional">
+              <img src="/icons/artifacts_evaluated_functional_v1_1.png" class="icon"></img>
+            </a>
+            <a href="https://www.acm.org/publications/policies/artifact-review-and-badging-current#available">
+              <img src="/icons/artifacts_available_v1_1.png" class="icon"></img>
+            </a>
+            <span style="font-family: 'Bangers';">
+              + 🏆 Distinguished Artifact!
+            </span>
+          </div>
+          <div class="authors">
+            <a href="https://fhackett.com/">Finn Hackett</a>,
+            <a href="https://shayanh.com/">Shayan Hosseini</a>,
+            Renato Costa,
+            <a href="https://minhdo.org/">Matthew Do</a>,
+            and <a href="https://www.cs.ubc.ca/~bestchai/">Ivan Beschastnikh</a>
+          </div>
+        </div>
+        <div class="publication">
+          <div class="title">
+            <a href="https://conf.researchr.org/track/icse-2023/icse-2023-SEIP">[ICSE-SEIP'23]</a>
+            <a href="https://doi.org/10.1109/ICSE-SEIP58684.2023.00006" class="name">Understanding Inconsistency in Azure Cosmos DB with TLA+</a>
+            <a href="/files/icse-seip-23-inconsistency.pdf">[pdf]</a>
+          </div>
+          <div class="authors">
+            <a href="https://fhackett.com/">Finn Hackett</a>,
+            Joshua Rowe,
+            and <a href="https://lemmster.de/">Markus Alexander Kuppe</a>
+          </div>
+          <div class="authors">
+            ❤️ <a href="https://muratbuffalo.blogspot.com/2024/06/understanding-inconsistency-in-azure.html">Commentary blog post</a> by <a href="https://cse.buffalo.edu/~demirbas/">Murat Demirbas</a>
+          </div>
+        </div>
+        <div class="publication">
+          <div class="title">
+            <a href="https://conf.researchr.org/home/models-2020">[MODELS'20]</a>
+            <a href="https://doi.org/10.1145/3365438.3410964" class="name">mel- model extractor language for extracting facts from models</a>
+            <a href="https://www.acm.org/publications/policies/artifact-review-and-badging-current#functional">
+              <img src="/icons/artifacts_evaluated_functional_v1_1.png" class="icon"></img>
+            </a>
+          </div>
+          <div class="authors">
+            Robert Hackman,
+            <a href="https://cs.uwaterloo.ca/~jmatlee/">Joanne M. Atley</a>,
+            <a href="https://fhackett.com/">Finn Hackett</a>,
+            and <a href="https://plg.uwaterloo.ca/~migod/">Michael W. Godfrey</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
